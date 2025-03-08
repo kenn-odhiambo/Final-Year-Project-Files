@@ -1,0 +1,39 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Kaggwa%
+, Najjuka%
+, Nuwamanya%
+, Nabulo%
+\BCBL {}\ \BBA {} Nkola%
+}{%
+Kaggwa%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+Kaggwa2021}
+\APACinsertmetastar {%
+Kaggwa2021}%
+\begin{APACrefauthors}%
+Kaggwa, M\BPBI M.%
+, Najjuka, S\BPBI M.%
+, Nuwamanya, S.%
+, Nabulo, H.%
+\BCBL {}\ \BBA {} Nkola, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{5}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Depression among cancer caregivers in a rural
+  setting.xlsx}} {{Depression among cancer caregivers in a rural
+  setting.xlsx}}.{\BBCQ}
+\newblock
+\begin{APACrefURL}
+  \url{https://figshare.com/articles/dataset/Depression_among_cancer_caregivers_in_a_rural_setting_xlsx/14524800}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.6084/m9.figshare.14524800.v1} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

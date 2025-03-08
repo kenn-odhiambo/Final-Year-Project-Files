@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{alltt}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{alltt}
+\usepackage{times}
+\usepackage[top=20pt,bottom=20pt]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabu}
+\usepackage{float}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{hyperref}
+\DefineVerbatimEnvironment{Sinput}{Verbatim}{xleftmargin=2em,frame=single}
+\DefineVerbatimEnvironment{Soutput}{Verbatim}{xleftmargin=0em,frame=single}
+
+\usepackage{Sweave}
+\begin{document}
+\input{factor_analysis-concordance}
+
+\section{Load necessary packages}
+\begin{Schunk}
+\begin{Sinput}
+> library(readr)
+> library(stats)
+> library(MVN)
+> library(psych)
+> library(kableExtra)
+> library(dplyr)
+> library(lavaan)
+> library(ggplot2)
+> 
+\end{Sinput}
+\end{Schunk}
+
+\section{data importation}

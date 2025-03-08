@@ -1,0 +1,309 @@
+\documentclass[12pt]{article}
+%\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[top=20pt,bottom=20pt,right=15pt,left=15pt]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{array}
+\numberwithin{equation}{section}
+\newlist{bracketedromanenum}{enumerate}{1}
+\setlist[bracketedromanenum]{
+	label={(\roman*)},
+	ref={\roman*},
+	itemsep=0.5em,
+	topsep=0.5em
+}
+\usepackage{Sweave}
+\begin{document}
+\input{OLR-concordance}
+options <- SweaveParseOptions(results = "tex")
+
+\section*{CHAPTER ONE}
+\section*{INTRODUCTION}
+\setcounter{section}{1}
+\setcounter{subsection}{0}
+
+
+Ordinal logistic regression is a statistical modeling technique used to analyze and predict relationships between independent variables and an ordinal (ranked) dependent variable. It is commonly employed in various fields where the outcome of interest is ordered or ranked, such as psychology, sociology, education, and healthcare.\\
+In psychology and sociology, ordinal logistic regression can be used to examine factors influencing attitudes, preferences, or opinions, stress levels, anxiety and depression, measured on Likert scales or other rating systems.\\
+In education, ordinal logistic regression can be utilized to analyze the factors affecting academic achievement levels categorized as low, moderate, or high. Researchers can investigate the influence of variables like socioeconomic status, study habits, or classroom environment on students' performance categories, helping to identify key factors that contribute to academic success.\\
+In healthcare, ordinal logistic regression can assist in examining the predictors of disease severity or patient outcomes categorized as mild, moderate, or severe. By considering factors such as age, comorbidities, or treatment protocols, researchers can gain a better understanding of the variables impacting disease progression and tailor interventions accordingly.This is just a highlight where logistic regression can be useful tool in gaining insights about a given phenomena. Its versatility in handling ordered outcomes makes it a valuable tool for understanding and predicting various phenomena across different fields.On this paper we will use it to study depression levels among cancer care givers.
+
+\subsection{Background Information}
+
+Depression among caregivers is a significant mental health concern that arises from the demanding and often stressful nature of providing care to individuals with chronic illnesses, disabilities, or other dependent conditions. Caregivers can experience emotional, physical, and financial burdens, which can contribute to the development of depression symptoms. Understanding the factors associated with depression among cancer caregivers can help inform interventions and support systems to alleviate their mental health challenges.\\
+
+Ordinal logistic regression can be a useful statistical approach for investigating the factors related to depression among cancer caregivers. In this context, the ordinal dependent variable would be depression which is at four levels i.e none,mild,moderate, severe and profound in that order of severity. The regression analysis can explore how various independent variables, such as caregiver demographics, the care recipient's condition, social support, and coping strategies, relate to different levels of depression experienced by caregivers.\\
+
+By applying ordinal logistic regression, one can examine the relationships between these predictor variables and the ordinal outcome of depression severity. The analysis can provide valuable insights into the relative impact of different factors on caregivers' mental well-being, identify high-risk groups, and inform targeted interventions.
+
+Through such analyses, researchers can explore questions like how caregiver age, gender,income, marital status or relationship to the care recipient influence the likelihood of experiencing different levels of depression. They can also examine the role of social support networks, coping mechanisms, and caregiver burden in predicting depression severity.\\
+
+\subsection{Statement of the Problem}
+Researchers have been faced with the problem of identifying potential predictors of depression among cancer caregivers.  In order to better understand the complex processes causing caregiver depression and to guide the creation of effective therapies and support systems, we have identified and quantified the important variables linked to depression and developed multiple regression model to understand the relative influence of these predictors.
+
+\subsection{Objective of the Study}
+\subsubsection{General objectives}
+To Identify predictors, measure associations, examine interactions, evaluate model performance, and offer evidence-based suggestions for interventions for depression among cancer care givers in a rural setting
+\subsubsection{Specific objectives}
+\begin{enumerate}
+\item To identify the significant predictors that contribute to depression among cancer caregivers in a rural setting
+\item To assess the performance of the ordinal logistic regression model in predicting depression among cancer caregivers
+\item To provide evidence-based recommendations for interventions and support systems aimed at addressing depression among cancer caregivers
+\end{enumerate}
+
+\subsection{Methodology framework}
+A cross sectional research design was used in a rural setting among cancer caregivers on 367 participants. The independent variables were the age of patient and participant and the level of income per month in a household. These were used to determine their relationship with the response variable which in this case is depression. A PHQ-9 scale was used to asses depression and the identified predictors and was administered using a face-to-face interview to gather data from the identified caregivers. Privacy and confidentiality of the data was ensured. The data was cleaned and outliers checked. A multiple linear regression was performed including all the relevant predictors and assumptions of the model addressed. The results were interpreted and goodness of fit evaluated. A discussion of the findings took place, conclusions were drawn and recommendations made accordingly
+
+\subsection{Justification of the Study}
+Cancer caregiver depression is a serious mental health issue that can have a negative impact on both the caregivers and the people they are caring for. Understanding the causes of caregiver depression is essential to creating effective support networks and therapies. We may determine the main factors and their relative impact on caregiver sadness. Rural caregivers frequently encounter particular difficulties, such as restricted access to healthcare resources, social isolation, transportation problems, and budgetary restrictions (Walling et al., 2019) and (Fluchel et al., 2014).These difficulties could increase the load on caregivers and raise the risk of depression. Multiple linear regression analysis used to examine the depression predictors in the rural context can assist identify the unique elements leading to depression in these environments and direct the creation of specialized remedies. The results of this study can help with the creation and enhancement of rural cancer caregiver support systems. Healthcare professionals, policymakers, and support groups can create targeted treatments that meet the unique needs and difficulties of caregivers in these circumstances by recognizing the predictors of depression. Access to mental health treatments, strengthening social support systems, and putting caregiver-relief measures into place.
+
+\newpage
+	\section*{CHAPTER 2}
+	\section*{LITERATURE REVIEW}
+	In this chapter, a review of the existing research and scholarship related to mental health and its effects on a person's productivity as well as the interaction between an individual's cognitive, affective and somatic symptoms of depression is made. Key insights from previous research have immensely contributed to recent advances in mental health understanding.The following are some of the previous works.\\
+	
+	
+	\noindent A research study conducted by Martin et al. (2009), investigated whether different types of health promotion interventions in the workplace reduced depression and anxiety symptoms. A systematic review and meta-analysis of the literature was undertaken on workplace health promotion published during the period 1997-2007.Studies were considered eligible for inclusion if they evaluated the impact of an intervention using a valid indicator or specific measure of depression or anxiety symptoms. The standardized mean difference was calculated for each of the following three types of outcome measures; depression, anxiety and composite mental health. Altogether,22 studies met the inclusion criteria, with a total sample size of 3409 employees post intervention, and 17 of the studies were included in the meta-analysis representing 20 interventions-control comparisons. The pooled results indicated small but positive overall effects of the interventions with respect to symptoms of depression and anxiety, but no effect on composite mental health measures. The interventions that included a direct focus on mental health had a comparable effect on depression and anxiety symptoms as did the interventions with an indirect focus on risk factors.\\
+	
+	\noindent Jain et al. (2013) examined the burden of depression on work productivity in the US workforce. The Patient Health Questionnaire for depression severity and the Health and Work Performance Questionnaire and Work Productivity and Activity Impairment (WPAI) Questionnaire for absenteeism and presenteeism were used to survey 1051 full-time employees in February 2010. The results indicated that out of the 1051 employees with depression, 40.3\% had no depressive symptoms at the time of the survey,30.4\% had mild depression, 15.8\% had moderate depression,7.8\% had moderately severe depression, and 5.8\% had severe depression. All levels of depression were associated with decreased work productivity as severity increased, presenteeism and absenteeism worsened.\\
+	
+	
+	\noindent In another study Serpa et al. (2014), investigated the major problems among Veterans specifically anxiety, depression and suicidal ideation. Pre- and Post Mindfulness Based Stress Reduction (MBSR) questionnaires were used to collect data on MBSR's effectiveness among 79 veterans at an urban Veterans Health Administration medical facility and were used for comparison among individuals. A meditation analysis was conducted to determine whether changes in mindfulness were related to changes in the other outcomes for a period of 9 weekly sessions. The results indicated significant reductions in anxiety, depressions, and suicidal ideation after MBSR training as well as improved mental health functioning scores although pain intensity and physical health functionality did not register improvements.\\
+	
+	\noindent Laing and Jones (2016) investigated the mediation effect of anxiety and depression on the relationship between perceived health-promoting workplace culture and presenteeism. Paper surveys were distributed to 4703 state employees. The variables that were investigated included symptoms of depression, anxiety, perceived workplace support for healthy living inclusive of physical activity and presenteeism. Correlational analysis was used to asses the relationships among culture, mental health and productivity. The results indicated that indirect effects of workplace culture on productivity, mediated by anxiety and depression symptoms were significant. Healthy living culture and anxiety were significantly negatively associated and anxiety and presenteeism were significantly positively associated.\\
+	
+	\noindent Another study by Magtibay et al. (2017) assessed the efficacy of blended learning which was intended to decrease stress and burnout among nurses through the use of the Stress Management and Resiliency Training (SMART) program. Consistent with blended learning, participants chose the format that met their learning styles and goals; Web-based, independent reading or facilitated discussions. The end points of mindfulness, resilience, anxiety, stress, happiness, and burnout were measured at baseline, postintervention, and 3-month follow-up to examine within-group differences. The results indicated statistically significant, clinically meaningful decreases in anxiety, stress, and burnout and increases in resilience, happiness, and mindfulness. \\
+	
+	\noindent Levis et al. (2019), evaluate the accuracy of the Patient Health Questionnaire-9 (PHQ-9) for screening major depression in adults using individual participant data meta-analysis. The study, which was conducted by the DEPRESsion Screening Data (DEPRESSD) Collaboration, analyzed data from 58 studies, with a total of 17 357 participants. It was found that combined sensitivity and specificity was maximized at a cut-off score of 10 or above among studies using a semi-structured interview. Secondly across cut-off scores of 5-15, sensitivity with semi-structured interviews was 5\%-22\% higher than for fully structured interviews.  \\
+	
+	\noindent Leung et al. (2020) investigated the factor structure, reliability, and construct validity of the Patient Health Questionnaire-9 (PHQ-9) in a community sample of 10 933 Chinese adolescents. Confirmatory factor analysis (CFA) was used to examine the one-factor structure of the PHQ-9, and multiple-group CFAs were performed to test for measurement invariance across gender and age subgroups. Internal consistency reliability was evaluated using Cronbach alpha, and construct validity was assessed using Pearson correlation coefficients between PHQ-9 scores and anxiety, self-esteem and perceived control. The results indicated that a one-factor model with three pairs of items correlations fitted the PHQ-9 data well and that measurement invariances by age and gender were supported. The PHQ-9 was also strongly correlated with anxiety, self-esteem and perceived control.\\
+	
+	\noindent In a recent study, Levis et al. (2020), a meta-analysis of 44 studies was conducted to compare the sensitivity and specificity of the PHQ-2 alone and combined with PHQ-9.The Individual participant data were obtained from 100 eligible studies comprising of 44 318 participants, of which 4572 had major depression. The authors found that the combination of PHQ-2 followed by PHQ-9 had similar sensitivity but higher specificity compared with PHQ-9.\\
+	
+	\noindent In a more recent study, Lister et al. (2023) conducted a qualitative study that investigated the barriers and enablers to mental well being and academic success that students experienced in distance learning. Narrative inquiry was used whereby students shared their own stories and tutors shared stories about the students they had supported. In total, 60 themes were identified, consisting of 155 sub-themes and 783 coded references. The barriers and enablers were then clustered into three overall categories; study-related barriers/enablers, skills-related barriers/enablers and environmental barriers/enablers, and 10 sub-categories, curriculum, tuition, assessment, social skills, self-management, study skills, spaces, systems, people and life. It was found that barriers and enablers were existent in the majority of themes, implying that different aspects of study could be both barriers or enablers for mental well being and study success, depending on who was experiencing them and how, for example, assessment feedback was a barrier for students when it was negative, but was an enabler when it was constructive and took place in an environment of trust.\\
+	
+	\noindent In summary, the past research works on mental health have been conducted using Meta-analysis, Qualitative techniques, CFA and Narrative inquiry. ordinal logistic regression will be conducted to examine the relationships between the independent variables (age of patient, age of participant, marital status, education, social support ,and level of income) and the dependent	variable (level of depression). The findings of this research will contribute to	our understanding of the factors influencing depression among caregivers in rural settings and may inform the development of targeted interventions to support these individuals. 
+\newpage
+\section*{CHAPTER THREE}
+\section*{Ordinal Logistic Regression}
+\label{sec:Methodology}
+\setcounter{section}{3}
+\setcounter{subsection}{0}
+
+\subsection{Introduction}
+This chapter presents the the theory of the ordinal logistic regression model.
+
+\subsection{Ordinal Logistic Regression}
+
+Ordinal logistic regression is a statistical method utilized to analyze the association between a categorical with natural ordering and one or more explanatory variableS. The explanatory variables can be either continuous or categorical in nature. Unlike logistic regression, which deals with binary responses, ordinal logistic regression extends this concept to handle responses with multiple ordered levels (Agresti, 2019).
+
+\subsection{Assumptions of the model:}
+For the results of ordinal logistic to hold, certain assumptions have to be met. The assumptions associated with Ordinal Logistic Regression are:
+
+\begin{itemize}
+	\item Proportional Odds Assumption:\\
+	The proportional odds assumption states that the relationship between the independent variables and the cumulative odds of being in a higher category remains constant across all levels of the dependent variable. This assumption implies that the coefficients associated with the independent variables are the same across different levels of the dependent variable.
+	
+	\item Independence of Observations:\\
+	Each observation or data point is independent of others. This assumption requires that the observations are not influenced by each other, meaning that the outcome of one observation does not affect the outcome of another.
+	
+	\item Ordinality of the Dependent Variable:\\
+	Ordinal logistic regression assumes that the dependent variable is measured on an ordinal scale. This means that the categories of the dependent variable have a natural order and the distance between categories is not necessarily equal. 
+	
+	\item Absence of Perfect Separation:\\
+	Perfect separation occurs when there is a combination of independent variable values that perfectly predicts the outcome category. In such cases, the model cannot be estimated or interpreted properly. 
+	
+	\item Adequate Sample Size:\\
+	Having an adequate sample size is important for reliable results. The sample size should be large enough to ensure stable parameter estimates and valid statistical inference. Small sample sizes can lead to imprecise estimates and low statistical power.
+\end{itemize}
+	
+\subsection{The Model}
+\noindent
+Let \textbf{Y} be an ordinal outcome with \textbf{j} categories, \textbf{$j \ge 2$}  . \\
+Suppose there are p covariates $X\_1,X\_2,...,X\_p$\\
+Then \textbf{$P(Y\le j)$} is the cumulative probability of \textbf{Y} less than or equal to a specific category \textbf{j=1,...,j-1}.\\
+The odds of being less than or equal a particular category can be defined as 	$\frac{P(Y\le j)}{P(Y> j)}$
+	
+The ordinal logistic regression model is defined as follows:
+
+\begin{equation}
+\text{logit}(P(Y \leq j)) = \alpha_j + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_p X_p
+\label{eq:3.1}
+\end{equation}
+
+	There exists three parameterizations of the ordinal logistic regression model 
+		\begin{enumerate}
+		\item model 1:\\
+		\begin{equation}	
+	log \frac{P(Y\le j)}{P(Y>j)} = \alpha_j - \beta_1 X_1 - \beta_2 X_2 - \ldots - \beta_p X_p
+	\label{eq:3.2}
+\end{equation}
+		
+			\item model 2:\\
+			\begin{equation}
+			log \frac{P(Y\le j)}{P(Y>j)} = \alpha_j + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_p X_p
+		\label{eq:3.3}
+\end{equation}
+			
+				\item model 3:\\	
+				\begin{equation}
+				log \frac{P(Y\le j)}{P(Y\le j)}= \alpha_j - \beta_1 X_1 - \beta_2 X_2 - \ldots - \beta_p X_p
+			\label{eq:3.4}
+\end{equation}
+				\end{enumerate}
+
+	where:
+	\begin{itemize}
+		\item $P(Y \leq j)$ is the cumulative probability of the response variable $Y$ being in category $j$ or lower,
+		\item $\alpha_j$ is the intercept parameter specific to category $j$,
+		\item $\beta_1, \beta_2, \ldots, \beta_p$ are the coefficients associated with the independent variables $X_1, X_2, \ldots, X_p$, respectively.
+	\end{itemize}
+In the re-parametrized model 1, a negative sign is incorporated in the coefficients to establish a direct correspondence between the slope and the ranking. Therefore, a positive coefficient in the model indicates that as the value of the explanatory variable increases, the likelihood of a higher ranking also increases. This re-parametrization helps in interpreting the coefficients in a more intuitive manner, as a positive coefficient signifies a positive effect on the response variable, aligning with our expectation that higher values of the explanatory variable lead to higher rankings.
+	
+	\section{Interpretation of model Coefficients}
+	\begin{itemize}
+		\item The intercept parameter $\alpha_j$ represents the log-odds of the response variable being in category $j$ or lower when all independent variables are zero.
+		\item The coefficient $\beta_k$ associated with independent variable $X_k$ represents the change in the log-odds of the response variable for a one-unit increase in $X_k$, while holding all other variables constant.
+	\end{itemize}
+	
+	To obtain the odds ratio, exponentiate the coefficient:
+	
+	\[
+	\text{Odds Ratio} = \exp(\beta_k)
+	\]
+	
+	The odds ratio indicates how the odds of being in a higher category change with a one-unit increase in the corresponding independent variable, assuming the other variables are held constant.\\
+
+	\subsection{Prediction of New Observations}
+The predicted probabilities  and proportional odds can be obtained for ordinal logistic regression.
+Using model 2,
+				\begin{equation}
+			log \frac{P(Y\le j)}{P(Y>j)} = \alpha_j + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_p X_p
+		\label{eq:3.5}
+\end{equation}
+	the predicted probabilities can be calculated as 
+	
+	
+	
+	
+\begin{equation}
+	log \frac{P(Y\le j}{P(Y>j)} =\frac{e^{\alpha_j+\beta_1x_1+\beta_2x_2+\ldots+\beta_p x_p}}{1+e^{\alpha_j+\beta_1x_1+\beta_2x_2+\ldots+\beta_p x_p}}
+			\label{eq:3.6}
+			\caption{Predicted probabilities}
+\end{equation}	
+	When the assumption of proportional odds holds, the predicted probabilities derived from the model will closely align with the observed proportions.\\~\\
+
+
+\subsection{Estimation of the Model Parameters}
+
+\begin{equation}
+E[Y_i] = \pi_i 
+\label{eq:3.7}
+	\end{equation}
+and
+
+\begin{equation}
+\text{logit}(\pi_i) = \beta_0 + \beta_1 x_{i1} + \ldots + \beta_p x_{ip}
+ = \mathbf{x}_i^T \boldsymbol{\beta}, 
+ \label{eq:3.8}
+	\end{equation}
+ 
+where \( \mathbf{x}_i = (1, x_{i1}, \ldots, x_{ip}) \) prime 
+ and 
+ \( \boldsymbol{\beta} = (\beta_0, \ldots, \beta_p) \)prime . 
+ Therefore,
+\[ E[Y_i] = \frac{{e^{\mathbf{x}_i^T \boldsymbol{\beta}}}}{{1 + e^{\mathbf{x}_i^T \boldsymbol{\beta}}}} \]
+
+
+The likelihood for \(n\) observations then is;
+\begin{equation}
+L = \prod_{i=1}^{n} \frac{\exp(\acute{x_i}\beta)}{1 + \exp(x_\acute{x_i}\beta)} \left(\prod_{i=1}^{n} (1 - \exp(\acute{x_i}\beta))\right)^{n-\sum_{i=1}^{n} Y_i},
+ \label{eq:3.9}
+	\end{equation}
+	
+and the log-likelihood is
+
+
+\begin{equation}
+l = \sum_{i=1}^{n} Y_i \log\left(\frac{\exp(\acute{x_i}\beta)}{1 + \exp(\acute{x_i}\beta)}\right) + (1 - Y_i) \log\left(1 - \frac{\exp(\acute{x_i}\beta)}{1 + \exp(\acute{x_i}\beta)}\right).
+ \label{eq:3.9}
+	\end{equation}
+
+\subsection{Confidence intervals for the coefficients and the odds ratios}\\
+In the model
+\[
+	log \frac{P(Y\le j}{P(Y>j)} = \alpha_j + \beta_1 X_1 + \beta_2 X_2 + \ldots + \beta_p X_p
+\]
+a \((1 - \alpha/2) \times 100\%\) confidence interval for \(\beta_j\), where \(j = 1, \ldots, p\), can easily be calculated as
+\[
+\hat{\beta}_j \pm Z_{1-\alpha/2} \cdot \text{se}(\hat{\beta}_j).
+\]
+The \((1 - \alpha/2) \times 100\%\) confidence interval for the odds ratio over a one unit change in \(x_j\) is given by
+\[
+\left( \exp(\hat{\beta}_j - Z_{1-\alpha/2} \cdot \text{se}(\hat{\beta}_j)), \exp(\hat{\beta}_j + Z_{1-\alpha/2} \cdot \text{se}(\hat{\beta}_j)) \right).
+\]
+
+
+\subection{Hypothesis testing Likelihood Ratio Test}
+The likelihood ratio test (LRT) statistic calculates the ratio between the likelihood at the hypothesized parameter values and the likelihood of the data at the maximum likelihood estimate(s). This statistic is derived from the following formula:
+For ordinal logistic regression, the likelihood ratio test (LRT) statistic can be calculated as:
+
+\begin{equation}
+LR = -2 \log \left( \frac{{L(\text{{at H0}})}}{{L(\text{{at MLE(s)})}}} \right) = -2l(\text{{H0}}) + 2l(\text{{MLE}})
+\label{eq:3.10}
+	\end{equation}
+
+For large \(n\), the LRT statistic follows a chi-square distribution with degrees of freedom equal to the number of parameters being estimated.
+
+For a given binary outcome, if the hypothesis is \(H0 : p = p_0\) versus \(HA : p \neq p_0\), the log-likelihoods are:
+
+\[
+l(\text{{H0}}) = \frac{1}{n} \sum_{i=1}^{n} Y_i \log(p_0) + \left(1 - \frac{1}{n} \sum_{i=1}^{n} Y_i\right) \log(1 - p_0)
+\]
+
+\[
+l(\text{{MLE}}) = \frac{1}{n} \sum_{i=1}^{n} Y_i \log(\hat{p}) + \left(1 - \frac{1}{n} \sum_{i=1}^{n} Y_i\right) \log(1 - \hat{p})
+\]
+
+where \(Y_i\) represents the binary outcome variable, \(p_0\) is the hypothesized probability, and \(\hat{p}\) is the maximum likelihood estimate for the probability.
+
+The LRT statistic is given by:
+
+\begin{equation}
+LR = -2 \left( \frac{1}{n} \sum_{i=1}^{n} Y_i \log \left( \frac{p_0}{\hat{p}} \right) + \left(1 - \frac{1}{n} \sum_{i=1}^{n} Y_i\right) \log((1 - p_0)(1 - \hat{p})) \right)
+\label{eq:3.10}
+	\end{equation}
+
+	
+	where \(LR \sim \chi^2_1\).\\~\\
+
+\newpage
+
+\section*{CHAPTER FOUR}
+\section*{DATA ANALYSIS}
+\setcounter{section}{4}
+\setcounter{subsection}{0}
+\subsection{Introduction}
+In this chapter, we discuss the sources of our data and the process of the preparation. We also explore the characteristics of data and finally we analyze and interpret the results.
+
+\subsection{Data for the Study}
+The data utilized in this study is Depression among cancer caregivers in a rural setting dataset published on figshare repository(Kagawa et al., 2021). Trained research assistants (RA) with training in counseling and Responsible Conducted of Research (RCR), administered the translated 30-minute-long questionnaire (written form). This questionnaire captured the participants' sociodemographic characteristics; age, sex, marital status, level of education, employment status, religion, and monthly income. Depression was assessed using the patient health questionnaire. All participants provided written consent to participate in the study. The sample size of 700 was calculated using the Kish-Leslie formula, basing on an estimated prevalence of 38.2\% among caregivers of cancer patients, level of attrition of 10\%, 95\% confidence interval and margin of error 5\%.
+
+\noindent Caregivers of cancer patients to participate in the study by convenience sampling based on the caregivers present during the time of data collection - in the evening (convenience time for most caregivers) when the caregivers were not so occupied with caregiving activities. Caregivers who were already receiving mental health care for depression (as reported by the caregiver) were excluded from the study. Because the study was screening for individuals who need treatment and those were already on treatment.
+
+\noindent In this study, we utilized the "Age of participant" variable which represents the age of the caregiver who responded to the questionnaire, "Age of patient" variable, "Household income" which represents the amount of money the household earns on a monthly basis.
+The dependent variable (depression) was measured on ordered four levels; None=1,mild=2, moderate=3, severe=4 and profound=5.
+

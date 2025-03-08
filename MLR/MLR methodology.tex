@@ -1,0 +1,265 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{array}
+\numberwithin{equation}{section}
+\newlist{bracketedromanenum}{enumerate}{1}
+\setlist[bracketedromanenum]{
+	label={(\roman*)},
+	ref={\roman*},
+	itemsep=0.5em,
+	topsep=0.5em
+}
+
+\begin{document}
+\section*{CHAPTER THREE}
+\section*{METHODOLOGY}
+\label{sec:methodology}
+\setcounter{section}{3}
+\setcounter{subsection}{0}
+
+\subsection{Introduction}
+This chapter presents the the theory of the multiple linear regression model as well as the Learst square principal solution of the model as demonstrated in the following subsections.
+\subsection{Multiple linear regression}
+Multiple linear regression allows us to investigate the joint effect of two or more  predictors on the response; i.e. relate a single response variable to two or more  predictors simultaneously. The predictor variables may be all quantitative or both quantitative and categorical.\\
+With, multile linear regression model we can  ;
+
+\begin{bracketedromanenum}
+	\item show how strong the relationship is between two or more predictor variables and one response variable.
+	\item predict the value of the response variable at a certain value of the predictor variables.
+\end{bracketedromanenum}
+
+\subsection{Multiple linear regression model}
+
+Suppose we want to use $k$ predictor variables $X_1, X_2, \ldots, X_k$ to explain a response variable $y$ then the model is of the form:
+\begin{equation}
+y=\beta_0+\beta_1 X_1+\ldots+\beta_k X_k+\epsilon
+   \label{eq:methodology_eq1}
+\end{equation}
+Given a random sample of size $n$ selected from the population, the model is of the form
+
+\begin{equation}
+Y_i=\beta_0+\beta_1 X_{i 1}+\ldots+\beta_k X_{i k}+\epsilon_i ; \quad i=1,2, \ldots, n
+  \label{eq:methodology_eq2}
+\end{equation}
+In matrix form we have
+$$
+\left[\begin{array}{c}
+	y_1 \\
+	y_2 \\
+	\vdots \\
+	y_n
+\end{array}\right]=\left[\begin{array}{ccccc}
+	1 & x_{11} & x_{12} & \cdots & x_{1 k} \\
+	1 & x_{21} & x_{22} & \cdots & x_{2 k} \\
+	\vdots & & & & \vdots \\
+	1 & x_{n 1} & X_{n 2} & \cdots & x_{n k}
+\end{array}\right]\left[\begin{array}{c}
+	\beta_0 \\
+	\beta_1 \\
+	\vdots \\
+	\beta_k
+\end{array}\right]+\left[\begin{array}{c}
+	\epsilon_1 \\
+	\epsilon_2 \\
+	\vdots \\
+	\epsilon_n
+\end{array}\right]
+$$
+i.e
+\begin{equation}
+\underbrace{\mathbf{y}}_{n \times 1}=\underbrace{\mathbf{X}}_{n \times(k+1)} \underbrace{\underline{\beta}}_{(k+1) \times 1}+\underbrace{\epsilon}_{n \times 1}
+\end{equation}
+where;\\
+The matrix $\mathbf{X}$ is called design matrix ;\\
+$\underline{\beta}$ is a column vector of regression coefficients.\\
+$\mathbf{y}$ is a column of response values for individuals in the sample.\\
+$\epsilon_i$ is the error term of individual observations of the outcome $y_i$ 
+
+\subsubsection*{Assumptions of the model:}
+\begin{itemize}
+\item  Each error term in the error vector has mean zero; $E[\underline{\epsilon}]=\underline{0}$
+\item The error terms are independent of each other; $\operatorname{Cov}\left(\epsilon_i, \epsilon_j\right)=0$
+\item  The error terms have constant variance; $E\left[\underline{\epsilon \epsilon}{ }^{\prime}=\sigma^2 I_n\right.$
+\item  The error terms are normally distributed with mean 0 and finite variance $\sigma^2$.
+\item  The response variable is normally distributed.
+\item There is no correlation between the error terms and the predictor variables.
+\end{itemize}
+
+
+\subsection{Estimation of the Model Parameters}
+
+In order to estimate the model parameters $\beta_0, \beta_1, \ldots, \beta_p$ in \ref{eq:methodology_eq1} we use the principle of least squares which minimizes the error sum os squares(SSE).
+Suppose that $n > k$ observations are available, and let $y_i$ denote the $i^th$ observed response and $x_{ij}$ denote the $i_th$ observation.
+We assume that the error term $\varepsilon$ in the model has $E(\varepsilon) =0, Var(\varepsilon) = \sigma^2$, and that the errors are uncorrelated.
+
+\noindent The general model of the Learst squares function is 
+
+\begin{equation}
+S\left(\beta_0, \beta_1, \ldots, \beta_k\right)=\sum_{i=1}^n \varepsilon_i^2=\sum_{i=1}^n\left(y_i-\beta_0-\sum_{j=1}^k \beta_j x_{i j}\right)^2
+\end{equation}
+
+\noindent The function $S$ must be minimized with respect to $\beta_0, \beta_1, \ldots, \beta_k$. The least-squares estimators of $\beta_0, \beta_1, \ldots, \beta_k$ must satisfy
+\begin{equation}
+\left.{\frac{\partial S}{\partial \beta_0}}\right|_{\hat{\beta}_0, \hat{\beta}_1, \ldots, \hat{\beta}_k}=-2 \sum_{i=1}^n\left(y_i-\hat{\beta}_0-\sum_{j=1}^k \hat{\beta}_j x_{i j}\right)=0
+\end{equation}
+and
+\begin{equation}
+\left.{\frac{\partial S}{\partial \beta_j}}\right|_{\hat{k}_0 \hat{\beta}_1 \ldots \hat{\beta}_k}=-2 \sum_{i=1}^n\left(y_i-\hat{\beta}_0-\sum_{j=1}^k \hat{\beta}_j x_{i j}\right) x_{i j}=0, \quad j=1,2, \ldots, k
+\label{eq:methodology_eq6}
+\end{equation}
+
+\noindent Simplifying equation \ref{eq:methodology_eq6}, we obtain the least-squares normal equations
+\begin{equation}
+n \hat{\beta}_0+\hat{\beta}_1 \sum_{i=1}^n x_{i 1}+\hat{\beta}_2 \sum_{i=1}^n x_{i 2}+\cdots+\hat{\beta}_k \sum_{i=1}^n x_{i k}=\sum_{i=1}^n y_i
+\end{equation}
+\noindent which simplifies to 
+\begin{equation}
+\mathbf{X'X \hat{\boldsymbol{\beta}}= X'Y}
+\end{equation}
+$$ SSE=\mathbf{(Y-X\underline{\beta})'(\underline{Y}-X \underline{\beta})}$$
+
+\noindent Differentiating SSE wrt to each unknown regression coefficient yields a $(k+1)$ simultaneous equations which are called normal equations.  \\
+\noindent The matrix of the normal equation is given 
+
+\begin{equation}
+X'\underline{Y}=(X'X)\underline{\beta}
+\end{equation}
+
+\noindent The solution is given by;
+$$\underline{\beta}= \left[\begin{array}{c}
+	\beta_1 \\
+	\beta_2 \\
+	\vdots \\
+	\beta_j\\
+	\vdots\\
+	y_n
+\end{array}\right]=(X'X)^{-1}X'Y$$
+
+\noindent provided the inverse matrix $(X'X)^{-1}$ exists.
+
+\subsection*{Fitted values}
+Let $\hat{\beta}$ be the estimator of $\beta$ for the model $y=X \beta+\epsilon$, we then define $\hat{y}=X \beta$ where $\beta$ is any estimator of $\beta$
+$R^2$ is the percentage of the dependent variable explained by the independent variable. The coefficient of multiple determination $R^2$ is
+$$
+R^2=1-\frac{S S E}{S S T}=\frac{S S R}{S S T}
+$$
+Multiple regression explains most of the observed y variation using a model with relatively few predictors that are easily interpreted. We therefore adjust $R^2$ to the size of the model
+$$
+R_a^2=1-\frac{n-1}{n-(p+1)} \times \frac{S S E}{S S T}
+$$
+and since the ratio infront of $\frac{S S E}{S S T}$ exceeds $1, R_a^2$ is smaller than $R^2$.
+The larger the number of predictors p relative to the sample size $n$, the smaller $R_\alpha^2$ will be relative to $R^2$. When $R^2$ is adjusted, it can take a negative value while $R^2$ itself must be between 0 and 1 .
+If $R_a^2$ is smaller than $R^2$, then the model may contain many predictors.
+
+
+\subsubsection*{Properties of Learst Squares Estimators}
+
+\begin{itemize}
+	\item $\hat{\beta}$ is unbiased estimator of $\beta$ if the model is correct.
+	\item $cov(\beta)=var(\hat{\beta}=var[(X'X)^{-1}X'Y]$
+\end{itemize}
+
+\subsubsection*{Estimation of $\sigma^2$}
+The method of least squares cannot be used to estimate $\sigma^2$ because $\sigma^2$ does not appear in $s(\beta)$
+We use the SSE as the basis for estimating
+$$
+\hat{\sigma}^2=s^2=\frac{S S E}{n-(p+1)}
+$$
+\subsection{HYPOTHESIS TESTING IN MULTIPLE LINEAR REGRESSION}
+
+Once we have estimated the parameters in the model, we face two
+immediate questions:\\
+\begin{enumerate}
+	\item What is the overall adequacy of the model?
+	\item Which specific regressors seem important? 
+\end{enumerate}
+Several hypothesis testing procedures prove useful for addressing
+these questions. The formal tests require that our random errors be
+independent and follow a normal distribution with mean $E(\epsilon_i)= 0$
+and variance  $Var(\epsilon_i)=\sigma^2$ \\
+\subsubsection{Test for Significance of Regression}
+The test for significance of regression is a test to determine if there
+is a linear relationship between the response $y$ and any of the
+regressor variables $x_1, x_2, \ldots ,x_k$\\
+This procedure is often thought of as an overall or global test of model adequacy. The appropriate hypotheses are\\
+$$H_0:\beta_1=\beta_2=\cdots\beta_k=0$$
+$$H_1:\beta_j\neq 0 for at least j$$
+Rejection of this null hypothesis implies that at least one of the
+regressors $x_1, x_2 \ldots x_k$ contributes significantly to the model.\\
+The test procedure is a generalization of the analysis of variance used in simple linear regression. The total sum of squares SST is partitioned into a sum of squares due to regression, SSR, and a residual sum of squares, SSE.
+Thus,\\
+This shows that if the null hypothesis is true,then $SSR_R\div\sigma$ follows a $\chi^2_k$ distribution, which has the same number of degrees of freedom as number of regressor variables in the model. 
+\begin{equation}
+	F_0=\frac{S S_{\mathrm{R}} / k}{S S_{\text {Res }} /(n-k-1)}=\frac{M S_{\mathrm{R}}}{M S_{\text {Res }}}
+\end{equation}
+
+\noindent follows the $F_{k, n-k-1}$ distribution.
+
+\noindent Suppose the expected mean squares indicate that if the observed value of
+$F_0$ is large, then it is likely that at least one $\beta_j \neq 0$ therefore we reject the null hypothesis.
+
+\noindent The test procedure is usually summarized in an analysis-or-variance
+\begin{equation*}
+	\begin{array}{lcccc}
+		\hline \text { Source of Variation } & \text { Sum of Squares } & \text { Degrees of Freedom } & \text { Mean Square } & F_0 \\
+		\hline \text { Regression } & S S_{\mathrm{R}} & k & M S_{\mathrm{R}} & M S_{\mathrm{R}} / M S_{\text {Res }} \\
+		\text { Residual } & S S_{\text {Res }} & n-k-1 & M S_{\text {Res }} & \\
+		\text { Total } & S S_{\mathrm{T}} & n-1 & & \\
+		\hline
+	\end{array}
+\end{equation*}
+
+\noindent and since
+\begin{equation}
+	S S_{\mathrm{T}}=\sum_{i=1}^n y_i^2-\frac{\left(\sum_{i=1}^n y_i\right)^2}{n}=\mathbf{y}^{\prime} \mathbf{y}-\frac{\left(\sum_{i=1}^n y_i\right)^2}{n}
+\end{equation}
+
+\noindent we may rewrite the above equation as\\
+\begin{equation}
+	S S_{\mathrm{Res}}=\mathbf{y}^{\prime} \mathbf{y}-\frac{\left(\sum_{i=1}^n y_i\right)^2}{n}-\left[\hat{\boldsymbol{\beta}}^{\prime} \mathbf{X}^{\prime} \mathbf{y}-\frac{\left(\sum_{i=1}^n y_i\right)^2}{n}\right]
+\end{equation}
+
+\noindent Therefore, the regression sum of squares is
+
+\begin{equation}
+	SS_{R}=\hat{\boldsymbol{\beta}}^{\prime} \mathbf{X}^{\prime} \mathbf{y}-\frac{\left(\sum_{i=1}^n y_i\right)^2}{n}
+\end{equation}
+
+\noindent the total sum of squares is\\
+
+\begin{equation}
+	S S_{\mathrm{T}}=\mathbf{y}^{\prime} \mathbf{y}-\frac{\left(\sum_{i=1}^n y_i\right)^2}{n}
+\end{equation}
+
+\subsubsection {Tests on Individual Regression Coeficients and Subsets of Coeficients}
+Once we have determined that at least one of the regressors is important, a logical question becomes which one(s). Adding a variable to a regression model always causes the sum of squares for regression to increase and the residual sum of squares to decrease.
+We must decide whether the increase in the regression sum of squares is suficient to warrant using the additional regressor in the model. The addition of a regressor also increases the variance of the fitted value , so we must be careful to include only regressors that are of real value in explaining the response. Furthermore, adding an unimportant regressor may increase the residual mean square, which may decrease the usefulness of the model.
+
+\noindent The hypotheses for testing the significance of any individual regression coeficient, such as $\beta_{\jmath}$ are\\
+$$H_0: \beta_j =0 ; H_1: \beta_j \neq 0$$
+
+\noindent If $H_0:\beta_j = 0$ is not rejected, then this indicates that the regressor $xj$ can be deleted from the model. 
+
+\subsection{Prediction of New Observations}
+
+The regression model can be used to predict future observations on y corresponding to particular values of the regressor variables, for example, $x_{01}, x_{02}, \ldots, x_{0 k}$. If $\boldsymbol{x}_0^{\prime}=\left[1, x_{01}, x_{02}, \ldots, x_{0 k}\right]$, then a point estimate of the future observation $y_0$ at the point $x_{01}, x_{02}, \ldots, x_{0 k}$ is
+$$\hat{y}_0=\mathbf{x}_0^{\prime} \hat{\beta}$$
+\noindent A $100(1-\alpha)$ percent prediction interval for this future observation is
+$$\hat{y}_0-t_{\alpha / 2, n-p} \sqrt{\hat{\sigma}^2\left(1+\mathbf{x}_0^{\prime}\left(\mathbf{X}^{\prime} \mathbf{X}\right)^{-1} \mathbf{x}_0\right)} \leq y_0 \leq \hat{y}_0+t_{\alpha / 2, n-p} \sqrt{\hat{\sigma}^2\left(1+\mathbf{x}_0^{\prime}\left(\mathbf{X}^{\prime} \mathbf{X}\right)^{-1} \mathbf{x}_0\right)}$$
+This is a generalization of the prediction interval for a future observation in simple linear regression
+
+\end{document}

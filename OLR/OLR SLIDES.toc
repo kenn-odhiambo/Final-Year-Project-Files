@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{LITERATURE REVIEW}{6}{0}{2}
+\beamer@sectionintoc {3}{METHODOLOGY}{10}{0}{3}
+\beamer@sectionintoc {4}{DATA ANALYSIS AND RESULTS}{16}{0}{4}
+\beamer@subsectionintoc {4}{1}{Ordinal logistic Regression model}{19}{0}{4}
+\beamer@sectionintoc {5}{Conclusions and Recommendations}{27}{0}{5}

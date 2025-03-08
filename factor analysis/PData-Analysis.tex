@@ -1,0 +1,712 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{threeparttable}
+
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={CHAPTER 4},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{CHAPTER 4}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\hypertarget{data-analysis-and-results}{%
+\section{DATA ANALYSIS AND RESULTS}\label{data-analysis-and-results}}
+
+We use Factor Analysis to identify the number of latent factors that
+determine depresion severity amongst the Kenyan Youth population. The
+data used for this project was collected using Depression severity
+Questionnaire which was subjected to random youth population in Kenya.
+The questionnaire consisted of 9 questions each of which the respondents
+were asked how they have been bothered by the items of the questionnaire
+over the past two weeks.\\
+All nine questions are scored on a scale from 0(Not at all) to 3(If the individual had the feeling almost everyday for the past two weeks before they answered the
+questionnaire).\\
+Exploratory data analysis revealed only minor deviations from normality in their distribution.
+
+\hypertarget{data-preparation}{%
+\subsection{Data Preparation}\label{data-preparation}}
+
+Before conducting the Factor analysis, we will perform several data
+preparation steps. This included data cleaning, missing value
+imputation, and variable transformation. Additionally, we will conduct a
+preliminary exploratory data analysis to gain insights into the
+distribution and characteristics of the variables.
+
+To understand the dataset and have a feel of the data, let's look at the
+first ten observations of the data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(psych)}
+\NormalTok{pro\_data}\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"Depression.csv"}\NormalTok{, }\AttributeTok{header =}\NormalTok{ T, }\AttributeTok{sep =} \StringTok{","}\NormalTok{)}
+\NormalTok{df}\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(pro\_data)}
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}\FunctionTok{head}\NormalTok{(pro\_data, }\DecValTok{10}\NormalTok{), }\StringTok{"latex"}\NormalTok{, }\AttributeTok{booktabs=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{longtable=}\NormalTok{ T, }
+             \AttributeTok{caption =} \StringTok{"FIRST TEN OBSERVATION"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[t]{rrrrrrrrrrrr}
+\caption{\label{tab:unnamed-chunk-1}FIRST TEN OBSERVATION}\\
+\toprule
+Index & Gender & Age & x1 & x2 & x3 & x4 & x5 & x6 & x7 & x8 & x9\\
+\midrule
+1 & 2 & 22 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 & 0\\
+2 & 1 & 35 & 3 & 1 & 1 & 1 & 2 & 2 & 0 & 2 & 0\\
+3 & 2 & 22 & 1 & 1 & 1 & 2 & 3 & 2 & 0 & 1 & 1\\
+4 & 1 & 25 & 1 & 1 & 1 & 1 & 0 & 3 & 1 & 1 & 0\\
+5 & 1 & 24 & 3 & 2 & 3 & 0 & 3 & 3 & 1 & 1 & 3\\
+\addlinespace
+6 & 1 & 24 & 1 & 1 & 1 & 0 & 0 & 1 & 0 & 0 & 0\\
+7 & 2 & 25 & 3 & 1 & 1 & 2 & 1 & 1 & 1 & 2 & 0\\
+8 & 2 & 20 & 1 & 3 & 2 & 1 & 0 & 3 & 1 & 1 & 0\\
+9 & 2 & 20 & 3 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 0\\
+10 & 2 & 24 & 1 & 1 & 0 & 3 & 1 & 1 & 0 & 1 & 0\\
+\bottomrule
+\end{longtable}
+
+We will majorly work with variables X1-X9 which represents the observed
+variables in our FA model.
+
+Therefore, we will ignore the first 3 columns of our data set that is,
+Index, Gender and Age columns
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Depr}\OtherTok{\textless{}{-}}\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{(Index))}
+
+\NormalTok{col\_rem}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"Gender"}\NormalTok{, }\StringTok{"Index"}\NormalTok{)}
+\NormalTok{Depr}\OtherTok{\textless{}{-}}\NormalTok{pro\_data }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{one\_of}\NormalTok{(col\_rem))}
+
+\CommentTok{\#removing the index,gender,age columns}
+
+\NormalTok{cl\_rm}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"Index"}\NormalTok{,}\StringTok{"Gender"}\NormalTok{, }\StringTok{"Age"}\NormalTok{)}
+\NormalTok{new\_pro\_data}\OtherTok{\textless{}{-}}\NormalTok{pro\_data }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{one\_of}\NormalTok{(cl\_rm))}
+\FunctionTok{View}\NormalTok{(new\_pro\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+Checking for missing values is crucial in Factor Analysis as missing
+data can potentially introduce bias and affect the accuracy of the
+results. Missing values can lead to a loss of information and may impact
+the estimation of Factor loadings and the overall interpretation of the
+factors.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#identifying missing values }
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(new\_pro\_data))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+As seen above, our data has no missing values therefore we can proceed
+with our analysis with reduced risk of biased findings and providing a
+more accurate understanding of the underlying factors contributing to
+the phenomenon under investigation.
+
+\hypertarget{descriptive-statistics}{%
+\subsection{Descriptive Statistics}\label{descriptive-statistics}}
+
+We begin by presenting descriptive statistics of the variables included
+in the analysis. This includes measures of central tendency (mean,
+median) and measures of variability (standard deviation, range). By
+understanding this, will help us with an overview of our variables that
+we shall use in building our Factor model. The measures of central
+tendencies can only be computed for the numerical variables thus we
+shall perform the descriptive statistics on Age and our variables X1- X9
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{psych}\SpecialCharTok{::}\FunctionTok{describe}\NormalTok{(Depr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     vars   n  mean   sd median trimmed  mad min max range  skew kurtosis   se
+## Age    1 247 26.35 6.78     24   26.15 5.93  12  40    28  0.31    -0.84 0.43
+## x1     2 247  1.70 1.02      1    1.75 1.48   0   3     3  0.04    -1.31 0.07
+## x2     3 247  1.74 1.06      2    1.79 1.48   0   3     3 -0.10    -1.31 0.07
+## x3     4 247  1.73 1.13      2    1.79 1.48   0   3     3 -0.18    -1.43 0.07
+## x4     5 247  2.02 1.04      2    2.13 1.48   0   3     3 -0.51    -1.11 0.07
+## x5     6 247  1.34 1.12      1    1.30 1.48   0   3     3  0.27    -1.31 0.07
+## x6     7 247  1.62 1.13      1    1.64 1.48   0   3     3 -0.01    -1.43 0.07
+## x7     8 247  1.37 1.10      1    1.34 1.48   0   3     3  0.23    -1.26 0.07
+## x8     9 247  1.09 0.98      1    0.99 1.48   0   3     3  0.52    -0.76 0.06
+## x9    10 247  0.95 1.10      1    0.82 1.48   0   3     3  0.83    -0.69 0.07
+\end{verbatim}
+
+Let's now take a look at how our respondents are distributed in terms of
+ages of either gender.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pro\_data}\SpecialCharTok{$}\NormalTok{Gender[pro\_data}\SpecialCharTok{$}\NormalTok{Gender}\SpecialCharTok{==}\DecValTok{1}\NormalTok{]}\OtherTok{\textless{}{-}}\StringTok{"Male"}
+\NormalTok{pro\_data}\SpecialCharTok{$}\NormalTok{Gender[pro\_data}\SpecialCharTok{$}\NormalTok{Gender}\SpecialCharTok{==}\DecValTok{2}\NormalTok{]}\OtherTok{\textless{}{-}}\StringTok{"Female"}
+
+\NormalTok{by\_gender}\OtherTok{\textless{}{-}}\NormalTok{pro\_data }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Gender) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{mean\_age=}\FunctionTok{mean}\NormalTok{(Age))}
+
+\FunctionTok{ggplot}\NormalTok{(by\_gender,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Gender,}\AttributeTok{y=}\NormalTok{mean\_age),}\AttributeTok{fill=}\NormalTok{Gender)}\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"Gender"}\NormalTok{,}\AttributeTok{y=}\StringTok{"Average Age"}\NormalTok{, }\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{30}\NormalTok{),}\AttributeTok{title =} \StringTok{"Average Age of participants"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{PData-Analysis_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\textbf{Checking normality assumptions}
+
+Factor Analysis models are based on the covariances among variances,
+they are susceptible to the effects of violations to the assumption of
+normality, which can strongly affect covariances.(Hartman, 2018). To
+check this assumption, we will examine our variables to check if there
+are any serious deviations from normality using histograms and Royston's
+normality techniques.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(MVN)}
+\NormalTok{ind\_var }\OtherTok{\textless{}{-}}\NormalTok{ df[,}\FunctionTok{paste}\NormalTok{(}\StringTok{"x"}\NormalTok{, }\DecValTok{1}\SpecialCharTok{:}\DecValTok{9}\NormalTok{, }\AttributeTok{sep=}\StringTok{""}\NormalTok{)]}
+\NormalTok{normality1}\OtherTok{\textless{}{-}}\FunctionTok{mvn}\NormalTok{(}\AttributeTok{data=}\NormalTok{ind\_var, }\AttributeTok{mvnTest=}\StringTok{"royston"}\NormalTok{,}\AttributeTok{univariatePlot=}\StringTok{"histogram"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{PData-Analysis_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+From the above histogram plots, it can be seen that variables x2,x4,
+x8,x9 are not normally distributed. However we have no serious
+deviations. To achieve normality, we will standardize our data when
+conduction Principal components analysis.
+
+\textbf{Data Standardization}
+
+We shall starndardize our variables using Zscore scaling. Z-score
+scaling transforms our variables to have a mean of zero and a standard
+deviation of one. This normalization process allows for a more
+meaningful comparison of variables with different scales and units.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Zscore}\OtherTok{\textless{}{-}}\FunctionTok{scale}\NormalTok{(new\_pro\_data)}
+\FunctionTok{View}\NormalTok{(Zscore)}
+\NormalTok{normality2}\OtherTok{\textless{}{-}}\FunctionTok{mvn}\NormalTok{(}\AttributeTok{data=}\NormalTok{Zscore, }\AttributeTok{mvnTest=}\StringTok{"royston"}\NormalTok{,}\AttributeTok{univariatePlot=}\StringTok{"histogram"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{PData-Analysis_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{normality2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $multivariateNormality
+##      Test        H       p value MVN
+## 1 Royston 594.5605 5.030746e-122  NO
+## 
+## $univariateNormality
+##               Test  Variable Statistic   p value Normality
+## 1 Anderson-Darling    x1       17.5696  <0.001      NO    
+## 2 Anderson-Darling    x2       15.1837  <0.001      NO    
+## 3 Anderson-Darling    x3       15.9452  <0.001      NO    
+## 4 Anderson-Darling    x4       19.7831  <0.001      NO    
+## 5 Anderson-Darling    x5       13.7992  <0.001      NO    
+## 6 Anderson-Darling    x6       15.1708  <0.001      NO    
+## 7 Anderson-Darling    x7       12.8536  <0.001      NO    
+## 8 Anderson-Darling    x8       14.0168  <0.001      NO    
+## 9 Anderson-Darling    x9       22.1000  <0.001      NO    
+## 
+## $Descriptives
+##      n          Mean Std.Dev      Median        Min       Max       25th
+## x1 247 -3.731060e-19       1 -0.68864342 -1.6662005 1.2664707 -0.6886434
+## x2 247 -9.116077e-18       1  0.24939751 -1.6460236 1.1971080 -0.6983130
+## x3 247  4.613083e-17       1  0.23562467 -1.5279903 1.1174321 -0.6461828
+## x4 247 -1.386534e-16       1 -0.01563443 -1.9464859 0.9497913 -0.9810602
+## x5 247  1.803638e-18       1 -0.29880798 -1.1880317 1.4796395 -1.1880317
+## x6 247 -3.208229e-17       1 -0.54602925 -1.4333268 1.2285658 -0.5460292
+## x7 247 -7.647938e-17       1 -0.33616507 -1.2486131 1.4887310 -1.2486131
+## x8 247 -8.811623e-17       1 -0.09530057 -1.1187458 1.9515899 -1.1187458
+## x9 247  2.173672e-17       1  0.04433371 -0.8682019 1.8694049 -0.8682019
+##         75th         Skew   Kurtosis
+## x1 1.2664707  0.043946482 -1.3143077
+## x2 1.1971080 -0.104299967 -1.3142945
+## x3 1.1174321 -0.182340330 -1.4259668
+## x4 0.9497913 -0.513021751 -1.1123751
+## x5 0.5904158  0.273278054 -1.3089854
+## x6 1.2285658 -0.006827855 -1.4277033
+## x7 0.5762830  0.233965842 -1.2609069
+## x8 0.9281446  0.517303404 -0.7596885
+## x9 0.5006015  0.833984627 -0.6853221
+\end{verbatim}
+
+\hypertarget{factor-analysis-model}{%
+\subsection{Factor Analysis Model}\label{factor-analysis-model}}
+
+We shall apply FA model to identify the number of latent factors that
+infer the presence and severity of depression amongst the Kenyan youth
+population. We shall use Principal Component Analysis (PCA), to extract
+the factors. The number of factors will be determined based on
+eigenvalues, scree plot examination.
+
+Before proceeding with factors extaration, let's perform Bartlett's test
+of sphericity to determine whether a correlation matrix of our
+variables(X1- X9) is significantly different from an identity matrix,
+indicating the appropriateness of conducting a Factor analysis. The
+Barlett's test assesses whether our variables, X1- X9, are interrelated
+enough to justify the extraction of common factors.
+
+The test evaluates the null hypothesis that the correlation matrix is an
+identity matrix, implying that variables are uncorrelated and factor
+analysis is not suitable. The alternative hypothesis suggests that the
+correlation matrix is not an identity matrix, indicating sufficient
+intercorrelations among variables for factor analysis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(REdaS)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'REdaS' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: grid
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{bart\_spher}\NormalTok{(new\_pro\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  Bartlett's Test of Sphericity
+## 
+## Call: bart_spher(x = new_pro_data)
+## 
+##      X2 = 844.617
+##      df = 36
+## p-value < 2.22e-16
+\end{verbatim}
+
+From the results the test produces a p value of less than 0.05 hence our
+variables, X1- X9, are interrelated enough to justify the extraction of
+common factors.
+
+\hypertarget{principal-components-solution}{%
+\subsubsection{Principal Components
+solution}\label{principal-components-solution}}
+
+One of the methods used in factor extraction is Principal components
+solution. PCA reduces the dimensionality of the dataset by transforming
+the original variables into a new set of uncorrelated variables called
+principal components. In order to come up with a unique solution we
+shall perform our analysis on our standardized variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data\_pca }\OtherTok{\textless{}{-}}\FunctionTok{prcomp}\NormalTok{(new\_pro\_data, }\AttributeTok{retx=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{center=}\ConstantTok{FALSE}\NormalTok{, }\AttributeTok{scale=}\ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(data\_pca)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Importance of components:
+##                           PC1     PC2     PC3     PC4     PC5     PC6     PC7
+## Standard deviation     2.7049 0.60143 0.57790 0.50191 0.46854 0.41118 0.39716
+## Proportion of Variance 0.8129 0.04019 0.03711 0.02799 0.02439 0.01879 0.01753
+## Cumulative Proportion  0.8129 0.85310 0.89021 0.91820 0.94259 0.96138 0.97891
+##                            PC8     PC9
+## Standard deviation     0.33520 0.27836
+## Proportion of Variance 0.01248 0.00861
+## Cumulative Proportion  0.99139 1.00000
+\end{verbatim}
+
+Each component explains a percentage of the total variance in the data
+set. In the Cumulative Proportion section, the first principal component
+explains almost 81\% of the total variance. This implies that almost
+two-thirds of the data in the set of 9 variables can be represented by
+just the first principal component. The second one explains 4.02\% of
+the total variance.
+
+For a better view this, let's visualize this result on scree plot.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{screeplot}\NormalTok{(data\_pca,}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{, }\AttributeTok{main =} \StringTok{"Scree plot"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{PData-Analysis_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+From the cumulative proportion and scree plot we can conclude that the
+first two components,PC1 and PC2, explains nearly 86\% of the total
+variance. This means that the first two principal components can
+accurately represent our data.
+
+\textbf{Loadings matrix}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(data\_pca}\SpecialCharTok{$}\NormalTok{rotation, }\AttributeTok{booktabs=}\ConstantTok{TRUE}\NormalTok{,  }\AttributeTok{longtable=}\NormalTok{T,}\AttributeTok{caption =} \StringTok{"loadings"}\NormalTok{,) }\SpecialCharTok{\%\textgreater{}\%} 
+\NormalTok{  kableExtra}\SpecialCharTok{::}\FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{full\_width =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[t]{lrrrrrrrrr}
+\caption{\label{tab:unnamed-chunk-11}loadings}\\
+\toprule
+  & PC1 & PC2 & PC3 & PC4 & PC5 & PC6 & PC7 & PC8 & PC9\\
+\midrule
+x1 & -0.3313213 & 0.2405843 & -0.1518165 & 0.6489980 & -0.3192214 & 0.2295026 & 0.3206828 & 0.3595045 & 0.0380008\\
+x2 & -0.3507561 & -0.0358480 & -0.1394410 & 0.1908451 & -0.0046149 & 0.1136319 & -0.1482687 & -0.7039229 & 0.5379544\\
+x3 & -0.3373868 & 0.2173807 & -0.3078203 & -0.0497565 & 0.0880032 & -0.7466463 & -0.2636625 & 0.2746371 & 0.1775330\\
+x4 & -0.3525266 & 0.1940792 & -0.1421475 & 0.0348539 & 0.0429909 & -0.0692589 & 0.0084622 & -0.4186717 & -0.7966398\\
+x5 & -0.3285995 & 0.1422229 & 0.0905325 & -0.6147897 & -0.6769830 & 0.1452959 & 0.0024065 & 0.0473857 & 0.0629644\\
+\addlinespace
+x6 & -0.3413658 & -0.0916276 & -0.0927938 & -0.0710164 & 0.3266536 & 0.5276328 & -0.6011698 & 0.3322899 & -0.0670755\\
+x7 & -0.3369660 & 0.0080996 & -0.1093994 & -0.3594906 & 0.5221837 & 0.1136792 & 0.6588999 & 0.0752952 & 0.1406034\\
+x8 & -0.3106558 & 0.1558649 & 0.9012510 & 0.1341881 & 0.1544741 & -0.1477488 & -0.0436953 & 0.0146602 & 0.0335123\\
+x9 & -0.3074577 & -0.8960639 & 0.0389900 & 0.0918673 & -0.1641254 & -0.1946249 & 0.0901117 & 0.0774030 & -0.1168421\\
+\bottomrule
+\end{longtable}
+
+The Loading can be interpreted as the correlation of each item with the
+component. It represents the contribution of each variable to each PC.
+Positive or negative values indicate the direction and strength of the
+relationship. Variables with higher absolute loading values have a more
+significant impact on the corresponding PC. Each item has a loading
+corresponding to each of the 9 components. For example, variable X1, is
+correlated -0.33 with the first principal component, 0.24 with the
+second component and so on. The square of each loading represents the
+proportion of variance explained by a particular component. Summing the
+squared loadings across the principal components (columns) gives you the
+communality estimates for each item, and summing each squared loading
+down the items (rows) gives you the eigenvalue for each component.
+
+\textbf{Chosing the number of components}
+
+Since the goal of running a PCA is to reduce our set of variables down
+one of the criterion discused in our methodology is to choose components
+that have eigenvalues greater than 1.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{varcov}\OtherTok{\textless{}{-}} \FunctionTok{cor}\NormalTok{(new\_pro\_data)}
+\FunctionTok{eigen}\NormalTok{(varcov)}\SpecialCharTok{$}\NormalTok{values}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4.5011459 0.8194965 0.7756848 0.7000963 0.5371757 0.4980671 0.4349160
+## [8] 0.4243792 0.3090386
+\end{verbatim}
+
+From the results and confirmed by the screeplot above it confirms the
+first principal component can sufficiently represent our data.
+
+To confirm this lets's run a chi-square test to confirm if one factor
+model sufficiently represents our data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{R}\OtherTok{\textless{}{-}}\FunctionTok{cov}\NormalTok{(new\_pro\_data)}
+\FunctionTok{factanal}\NormalTok{(}\AttributeTok{covmat=}\NormalTok{R,}\AttributeTok{factors=}\DecValTok{1}\NormalTok{,}\AttributeTok{method=}\StringTok{"mle"}\NormalTok{,}\AttributeTok{n.obs=}\DecValTok{247}\NormalTok{,}\AttributeTok{rotation =} \StringTok{"none"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## factanal(factors = 1, covmat = R, n.obs = 247, rotation = "none",     method = "mle")
+## 
+## Uniquenesses:
+##    x1    x2    x3    x4    x5    x6    x7    x8    x9 
+## 0.748 0.377 0.593 0.391 0.590 0.500 0.470 0.776 0.575 
+## 
+## Loadings:
+##    Factor1
+## x1 0.502  
+## x2 0.789  
+## x3 0.638  
+## x4 0.780  
+## x5 0.640  
+## x6 0.707  
+## x7 0.728  
+## x8 0.473  
+## x9 0.652  
+## 
+##                Factor1
+## SS loadings      3.980
+## Proportion Var   0.442
+## 
+## Test of the hypothesis that 1 factor is sufficient.
+## The chi square statistic is 44.51 on 27 degrees of freedom.
+## The p-value is 0.0183
+\end{verbatim}
+
+From the results the p- value is 0.0183 suggesting that the model is a
+poor fit. \textasciitilde{}
+
+We therefore proceed to test if 2 factors is suffiient to represent our
+data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{factanal}\NormalTok{(}\AttributeTok{covmat=}\NormalTok{R,}\AttributeTok{factors=}\DecValTok{2}\NormalTok{,}\AttributeTok{method=}\StringTok{"mle"}\NormalTok{,}\AttributeTok{n.obs=}\DecValTok{247}\NormalTok{,}\AttributeTok{rotation =} \StringTok{"none"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## factanal(factors = 2, covmat = R, n.obs = 247, rotation = "none",     method = "mle")
+## 
+## Uniquenesses:
+##    x1    x2    x3    x4    x5    x6    x7    x8    x9 
+## 0.750 0.366 0.564 0.261 0.596 0.478 0.477 0.773 0.429 
+## 
+## Loadings:
+##    Factor1 Factor2
+## x1  0.500         
+## x2  0.788   0.111 
+## x3  0.641  -0.160 
+## x4  0.813  -0.280 
+## x5  0.635         
+## x6  0.701   0.178 
+## x7  0.723         
+## x8  0.467         
+## x9  0.661   0.365 
+## 
+##                Factor1 Factor2
+## SS loadings      4.015   0.292
+## Proportion Var   0.446   0.032
+## Cumulative Var   0.446   0.478
+## 
+## Test of the hypothesis that 2 factors are sufficient.
+## The chi square statistic is 21.96 on 19 degrees of freedom.
+## The p-value is 0.286
+\end{verbatim}
+
+The p-value is 0.286 sugesting that the two factor model is a good fit
+for our data.
+
+If we repeat the test with three factors upto 5 we get a good fit. The
+goal Principal components solution is to reduce the number of factors as
+small as possible but still sufficiently representing our data.
+
+\hypertarget{factor-rotation}{%
+\subsection{Factor Rotation}\label{factor-rotation}}
+
+After deciding on the number of factors to extract and with analysis
+model to use, the next step is to interpret the factor loadings. Factor
+rotations help us interpret factor loadings. The goal of factor rotation
+is to improve the interpretability of the factor solution by reaching
+simple structure.
+
+Without rotation, the first factor is the most general factor onto which
+most items load and explains the largest amount of variance.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fa }\OtherTok{\textless{}{-}} \FunctionTok{principal}\NormalTok{(new\_pro\_data, }\AttributeTok{nfactors=}\DecValTok{2}\NormalTok{, }\AttributeTok{rotate=}\StringTok{"none"}\NormalTok{)}
+
+\NormalTok{fa}\SpecialCharTok{$}\NormalTok{loadings}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Loadings:
+##    PC1    PC2   
+## x1  0.561 -0.305
+## x2  0.811 -0.117
+## x3  0.683 -0.349
+## x4  0.803 -0.167
+## x5  0.698  0.156
+## x6  0.746       
+## x7  0.764       
+## x8  0.542  0.722
+## x9  0.703  0.115
+## 
+##                  PC1   PC2
+## SS loadings    4.501 0.819
+## Proportion Var 0.500 0.091
+## Cumulative Var 0.500 0.591
+\end{verbatim}
+
+For our analysis we shall use Orthogonal rotation assumes that the
+factors are not correlated. The benefit of doing varimax method which is
+an orthogonal rotation is that loadings are simple correlations of items
+with factors, and standardized solutions can estimate unique
+contribution of each factor.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fa }\OtherTok{\textless{}{-}} \FunctionTok{principal}\NormalTok{(new\_pro\_data, }\AttributeTok{nfactors=}\DecValTok{2}\NormalTok{, }\AttributeTok{rotate=}\StringTok{"varimax"}\NormalTok{)}
+\NormalTok{fa}\SpecialCharTok{$}\NormalTok{loadings}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Loadings:
+##    RC1   RC2  
+## x1 0.635      
+## x2 0.734 0.364
+## x3 0.761 0.101
+## x4 0.755 0.319
+## x5 0.486 0.525
+## x6 0.577 0.478
+## x7 0.623 0.443
+## x8       0.902
+## x9 0.513 0.494
+## 
+##                  RC1   RC2
+## SS loadings    3.314 2.007
+## Proportion Var 0.368 0.223
+## Cumulative Var 0.368 0.591
+\end{verbatim}
+
+We can visualize model for a better view
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{fa.diagram}\NormalTok{(fa)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{PData-Analysis_files/figure-latex/unnamed-chunk-17-1.pdf}
+
+From the loadings matrix, it's evident that variables X1, X2, X3, X4,
+X6, X7 and X9 has a higher loadings on the Factor 1 while variables X5
+and X8 has higher loadings on Factor 2.
+
+Therefore, an individual
+
+\end{document}

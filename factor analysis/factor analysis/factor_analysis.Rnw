@@ -1,0 +1,284 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{alltt}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{alltt}
+\usepackage{times}
+\usepackage[top=20pt,bottom=20pt]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabu}
+\usepackage{float}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{hyperref}
+\DefineVerbatimEnvironment{Sinput}{Verbatim}{xleftmargin=2em,frame=single}
+\DefineVerbatimEnvironment{Soutput}{Verbatim}{xleftmargin=0em,frame=single}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\section{Load necessary packages}
+<<warning=FALSE>>=
+library(readr)
+library(stats)
+library(MVN)
+library(psych)
+library(kableExtra)
+library(dplyr)
+library(lavaan)
+library(ggplot2)
+
+@
+
+\section{data importation}
+<<results='asis',fig.align='center'>>=
+ Depression <- read.csv("Depression.csv", T, ",")
+#View(Depression)
+names(Depression)
+
+df<-as.data.frame(Depression)
+knitr::kable(head(df, 5), booktabs=TRUE,  longtable=T,caption = "First 5 Observation",align = "c",col.names = names((df))) %>%
+  kableExtra::kable_styling(full_width = FALSE,bootstrap_options = c("striped","hover")) 
+@
+
+
+\section{Data preparation}
+<<>>=
+#removing the index column
+names(df)
+Depr<-df %>% 
+  select(-(Index))
+
+col_rem<-c("Gender", "Index")
+Depr<-Depression %>% 
+  select(-one_of(col_rem))
+
+View(Depr)
+
+
+#removing the index,gender,age columns
+
+cl_rm<-c("Index","Gender", "Age")
+data_dep<-Depression %>% 
+  select(-one_of(cl_rm))
+View(data_dep)
+
+#identifying missing values 
+sum(is.na(data_dep))
+@
+
+
+\section{Exploratory data analysis (EDA)}
+\begin{itemize}
+\item Data Summarization
+
+<<>>=
+str(Depression)
+
+#measures of central tendencies can only be computed for the numerical variables. i.e x1-X9 and age
+
+#describe(Depr)
+knitr::kable(describe(Depr), booktabs=TRUE,  longtable=T,caption = "Descriptive statistics",) %>% 
+  kableExtra::kable_styling(full_width = FALSE) 
+@
+
+\item data Visualization
+<<>>=
+Depression$Gender[Depression$Gender==1]<-"Male"
+Depression$Gender[Depression$Gender==2]<-"Female"
+View(Depression)
+
+#barplot of count by gender
+by_gender<-Depression %>% 
+  group_by(Gender) %>% 
+  summarize(mean_age=mean(Age))
+
+ggplot(by_gender,aes(x=Gender,y=mean_age),fill=Gender)+
+  geom_col()+
+  labs(x="Gender",y="Average Age",title = "Average Age of participants")+
+  theme_minimal()
+
+#ggplot(Depression,aes(x=Gender,y=freq),fill=Gender)+
+#  geom_bar("identity")+
+#  labs(x="Gender",y="count",title = "count of males and females")+
+#  theme_minimal()
+
+library(MVN)
+ind_var <- df[,paste("x", 1:9, sep="")]
+normality1<-mvn(data=ind_var, mvnTest="royston",univariatePlot="histogram")
+@
+variables x2,x4, x8,x9 are not normally distributed. However we have no serious deviations. To achieve normality, we will standardize our data when conduction Principal components analysis.\\
+
+
+\item data Normalization
+<<>>=
+Zscore<-scale(data_dep)
+View(Zscore)
+normality2<-mvn(data=Zscore, mvnTest="royston",univariatePlot="histogram")
+normality2
+@
+\end(itemize)
+
+\section{Exploratory factor analysis}
+
+<<>>=
+#Exploratory factor analysis
+bart_spher(data_dep)
+summary(is.na(data_dep))
+@
+produces Bartlett's test of sphericity to understand if the model will be significant\\~\\
+
+p-value is less than 0.05 hence the test is significant
+
+
+
+\section{Principal components analysis}
+<<>>=
+#Performing PCA using prcomp()function
+pca<-prcomp(data_dep, retx=TRUE, center=FALSE, scale=TRUE)
+summary(pca)
+
+screeplot(pca,type='l')
+
+sd <-pca$sdev
+
+loadings <- pca$rotation
+
+#rownames(loadings) <- colnames(R)
+scores <- pca$x
+@
+\subsection{Interpretation of PCA output}
+
+Principal Component Analysis (PCA) is a dimensionality reduction technique commonly used in data analysis and visualization.
+\begin{itemize}
+\item Importance of Components:\\~\\
+The summary typically starts with a table that shows the proportion of variance explained by each principal component (PC) and the cumulative proportion of variance explained. It indicates the importance of each PC in capturing the variability in the data. Higher values suggest that the corresponding PC accounts for more information in the dataset.
+<<>>=
+summary(pca)
+@
+
+\item Standard Deviations:\\~\\
+The next table displays the standard deviation of each principal component. It represents the spread of scores along each PC. Larger standard deviations suggest that the PC captures more variability in the original data.
+<<>>=
+knitr::kable(pca$sdev, booktabs=TRUE,  longtable=T,caption = "Standard Deviations",) %>% 
+  kableExtra::kable_styling(full_width = FALSE)
+
+@
+
+\item Proportion of Variance:\\~\\
+This table provides the proportion of variance explained by each PC. It helps assess the contribution of individual PCs to the overall variance in the dataset. Higher proportions indicate that the corresponding PC retains a significant amount of information from the original data.
+<<>>=
+ 
+summary(pca)
+@
+
+\item Cumulative Proportion of Variance:\\~\\
+Similar to the importance of components table, this table presents the cumulative proportion of variance explained by the PCs. It allows you to understand how much total variance is accounted for a given number of PCs. Typically, you aim to retain a cumulative proportion close to 1 (70\% is typically chosen ) to capture a substantial amount of variability.
+<<>>=
+summary(pca)
+@
+
+\item Loadings:\\~\\
+The loadings section shows the correlation between the original variables and each principal component. It represents the contribution of each variable to each PC. Positive or negative values indicate the direction and strength of the relationship. Variables with higher absolute loading values have a more significant impact on the corresponding PC.
+<<>>=
+#pca$rotation
+knitr::kable(pca$rotation, booktabs=TRUE,  longtable=T,caption = "loadings",) %>% 
+  kableExtra::kable_styling(full_width = FALSE)
+@
+
+\item Scores:\\~\\
+The scores table displays the transformed scores for each observation (data point) along each PC. These scores represent the coordinates of each observation in the reduced-dimensional space spanned by the PCs. They can be used for data visualization or further analysis.
+<<>>=
+
+Scores<-pca$x
+View(Scores)
+knitr::kable(head(Scores,5), booktabs=TRUE,  longtable=T,caption = "Scores",) %>% 
+  kableExtra::kable_styling(full_width = FALSE)
+
+@
+
+\end(itemize) 
+
+\section{Performing Factor Analysis using factanal () function.}
+<<>>=
+#Performing Factor Analysis FA using factanal()function 
+#Maximum Likelihood (MLE) approach
+R<-cov(data_dep)
+factanal(covmat=R,factors=1,method="mle",n.obs=247,rotation = "none")
+factanal(covmat=R,factors=2,method="mle",n.obs=247,rotation = "none")
+factanal(covmat=R,factors=6,method="mle",n.obs=247,rotation = "none")
+#note that two factor model is significant to a maximum of 5 factors
+@
+
+\section{Performing Factor Analysis using principal components}
+<<>>=
+data_cov<-cov(data_dep)
+fa <- principal(data_dep, nfactors=2, rotate="varimax")
+print(fa, digits=2, cutoff=.3, sort=TRUE)
+
+fa$loadings
+fa$fit
+fa$rotation
+fa$communality
+fa$STATISTIC
+fa$fn
+fa$Call
+fa$uniquenesses
+fa.diagram(fa)
+fa$criteria
+@
+\subsection{Interpretation of FA model output}
+
+\begin{itemize}
+\item \textbf{Model Fit:}
+The output often includes information about the overall model fit. It may include statistics such as the chi-square statistic, degrees of freedom, and p-value. These values assess the adequacy of the model fit to the data. A non-significant p-value suggests a good fit, indicating that the model adequately explains the observed data.
+<<>>=
+summary(fa)
+@
+
+\item \textbf{Factor Loadings:}\\
+Factor loadings represent the relationships between observed variables and underlying latent factors. The output provides a table or matrix displaying the loadings for each variable on each factor. Higher absolute values indicate stronger associations. Interpretation of loadings involves identifying variables that have significant loadings on specific factors, which helps understand the latent constructs captured by those factors.
+<<>>=
+fa$loadings
+@
+
+\item \textbf{Eigenvalues:}\\
+Eigenvalues represent the amount of variance explained by each factor. The output typically provides a table showing the eigenvalues and the proportion of variance explained by each factor. Higher eigenvalues indicate factors that capture more variability in the data. Typically eigenvalues greater than 1 or those that contribute a significant proportion of the variance are chosen.
+<<>>=
+varcov<-var(data_dep)
+eigen(varcov)$values
+@
+
+\item \textbf{Proportion of Variance Explained:}\\
+This component shows the proportion of total variance explained by each factor. It helps assess the relative contribution of each factor to the overall variability in the dataset. Higher proportions suggest that the corresponding factor explains a larger portion of the variance.
+<<>>=
+fa$Vaccounted
+knitr::kable(fa$Vaccounted, booktabs=TRUE,  longtable=T,caption = "Proportion of Variance Explained",) %>% 
+  kableExtra::kable_styling(full_width = FALSE)
+@
+@
+
+\item \textbf{Scree Plot:}\\
+A scree plot is a graphical representation of the eigenvalues. It helps determine the number of factors to retain in the analysis. The scree plot typically displays the eigenvalues on the y-axis and the factor number on the x-axis. The plot shows a steep drop-off followed by a more gradual decline. The number of factors to retain is usually determined by examining the point where the drop-off levels off or where the slope becomes less significant.
+<<>>=
+#refer to the scree plot at the PCA analysis
+@
+
+\item \textbf{Factor Correlations:}\\
+The output often includes a correlation matrix that shows the relationships between the extracted factors. Positive correlations suggest that the factors are related or capture similar constructs, while negative correlations indicate that the factors are orthogonal or capture distinct constructs.
+<<>>=
+fa_cor<-fa$scores
+View(fa_cor)
+knitr::kable(head(fa_cor,10), booktabs=TRUE,  longtable=T,caption = "Factor correlations",) %>% 
+  kableExtra::kable_styling(full_width = FALSE)
+@
+
+Interpreting the factor model output in R involves considering these various components to understand the relationships between observed variables and latent factors, assess the adequacy of the model fit, determine the number of factors to retain, and gain insights into the underlying structure of the data.
+
+\end{document}

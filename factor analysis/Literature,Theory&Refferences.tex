@@ -1,0 +1,424 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{array}
+\numberwithin{equation}{section}
+\newlist{bracketedromanenum}{enumerate}{1}
+\setlist[bracketedromanenum]{
+	label={(\roman*)},
+	ref={\roman*},
+	itemsep=0.5em,
+	topsep=0.5em
+}
+\begin{document}
+	\section*{CHAPTER 1}
+\section*{INTRODUCTION}
+Factor Analysis is a statistical technique used to uncover the underlying sections or dimensions within a set of observed variables. This technique extracts maximum common variance from all variables and puts them into a common score. The allure of Factor analysis over other approaches to the study of hypothetical constructs is its capacity of testing detailed hypothesis in a inferential mode. The major concern of Factor analysis is modelling factors, sometimes referred to as latent variables. It determines the extent to which each variable in the dataset is associated with a common factor. Factors are influences which are not directly measured, but account for commonality among set of measurements.
+
+\subsection*{1.1 background Information}
+Factor analysis is a powerful data reduction technique that enables researchers to investigate concepts that cannot easily be measured directly. They are able to test the hypothesis that a relationship between observed variables and their underlying constructs exists.It helps researchers and clinicians gain insights into the underlying constructs that contribute to mental health conditions and is useful when dealing with complex psychological phenomena that cannot be directly observed.Researchers typically start with a pool of variables (eg.symptoms and self report scales) thought to be relevant to a specific mental health construct.FA helps identify the subset of indicators that best present the underlying factors and eliminate redundant variables.Factor extraction involves identifying the underlying factors by examining the pattern of correlations among the observed variables which can be done using Principal Component Analysis (PCA).Once the factors are extracted, researchers employ factor rotation techniques (varimax, oblique rotation) to simplify the interpretation of the factor structure.
+
+\subsection* {1.2 Statement of the problem}
+\noindent Many reseachers in psychology and social science are forced with the problem of comparing latent constucts that are not directly observable.\\
+
+\noindent The latent constructs are usually measured using questionnaires, having different scales that reflect different underlying latent variables.The differences to these underlying constructs are tested via scale means.\\
+
+\noindent Factory Analysis has become the standard to identify and interpret these underlying constructs.
+
+
+\subsection* {1.3 Objective of the study}
+\subsubsection*{General Objectives}
+To demonstrate the use of FA in reducing the dimensionality of a large set of observed variables by identifying the underlying factors that explains the patterns of correlations among variables.
+
+\subsubsection*{Specific Objective}
+\begin{enumerate}
+	\item To identify the latent factors contributing to presence and depression severity
+	\item To assess the reliability of the Factor model in explaining depression severity.
+	\item To show how strongly every factor affects depression severity.
+\end{enumerate}
+
+\subsection* {1.4 Methodology}
+This study employed factor analysis to explore the underlying factor structure in a dataset. The sample size includes 247 participants between the age of 18- 35 who took part in an online depression test, and completed a 9-item major depression screener.
+
+\subsection* {1.5 Assumptions}
+\noindent Adequate sample size: It is assumed that the sample size is sufficient to provide reliable estimates and accurate parameter estimates. In general, larger sample sizes tend to yield more stable and robust factor analysis results.\\
+
+\noindent Linearity: Factor analysis assumes that the relationships between variables are linear. Nonlinear relationships may lead to biased factor loadings and inaccurate factor structures.\\
+
+\noindent Independence of observations: The assumption of independence assumes that each observation in the dataset is unrelated to other observations. Violations of this assumption, such as dependence or clustering, may affect the factor analysis results.\\
+
+\noindent Homogeneity of variance: The assumption of homogeneity of variance assumes that the variables have similar variances across the range of factor scores. Violations of this assumption may lead to distorted factor loadings and biased factor solutions.\\
+
+
+\subsection*{1.6 Justfication of the Study}
+Existing gaps in the field of research and psychology in the mental health sector to determine relationships between latent variables makes the basis of this research paper.Researchers lacking the knowledge of FA are faced with the problem of latent modelling.\\
+In this paper we discuss one of the tools of measuring latent variables showing the importance of this research to the researchers dealing with latent variable modelling.
+\newpage
+\section*{CHAPTER 2}
+\section*{LITERATURE REVIEW}
+In this chapter, a review of the existing research and scholarship related to mental health and its effects on a person’s productivity as well as the interaction between an individual’s cognitive, affective and somatic symptoms of depression is made. Key insights from previous research have immensely contributed to recent advances in mental health understanding.The following are some of the previous works.\\
+
+
+\noindent A research study conducted by Martin et al. (2009), investigated whether different types of health promotion interventions in the workplace reduced depression and anxiety symptoms. A systematic review and meta-analysis of the literature was undertaken on workplace health promotion published during the period 1997-2007.Studies were considered eligible for inclusion if they evaluated the impact of an intervention using a valid indicator or specific measure of depression or anxiety symptoms. The standardized mean difference was calculated for each of the following three types of outcome measures; depression, anxiety and composite mental health. Altogether,22 studies met the inclusion criteria, with a total sample size of 3409 employees post intervention, and 17 of the studies were included in the meta-analysis representing 20 interventions-control comparisons. The pooled results indicated small but positive overall effects of the interventions with respect to symptoms of depression and anxiety, but no effect on composite mental health measures. The interventions that included a direct focus on mental health had a comparable effect on depression and anxiety symptoms as did the interventions with an indirect focus on risk factors.\\
+
+\noindent Jain et al. (2013) examined the burden of depression on work productivity in the US workforce. The Patient Health Questionnaire for depression severity and the Health and Work Performance Questionnaire and Work Productivity and Activity Impairment (WPAI) Questionnaire for absenteeism and presenteeism were used to survey 1051 full-time employees in February 2010. The results indicated that out of the 1051 employees with depression, 40.3\% had no depressive symptoms at the time of the survey,30.4\% had mild depression, 15.8\% had moderate depression,7.8\% had moderately severe depression, and 5.8\% had severe depression. All levels of depression were associated with decreased work productivity as severity increased, presenteeism and absenteeism worsened.\\
+
+
+\noindent In another study Serpa et al. (2014), investigated the major problems among Veterans specifically anxiety, depression and suicidal ideation. Pre- and Post Mindfulness Based Stress Reduction (MBSR) questionnaires were used to collect data on MBSR's effectiveness among 79 veterans at an urban Veterans Health Administration medical facility and were used for comparison among individuals. A meditation analysis was conducted to determine whether changes in mindfulness were related to changes in the other outcomes for a period of 9 weekly sessions. The results indicated significant reductions in anxiety, depressions, and suicidal ideation after MBSR training as well as improved mental health functioning scores although pain intensity and physical health functionality did not register improvements.\\
+\noindent Laing and Jones (2016) investigated the mediation effect of anxiety and depression on the relationship between perceived health-promoting workplace culture and presenteeism. Paper surveys were distributed to 4703 state employees. The variables that were investigated included symptoms of depression, anxiety, perceived workplace support for healthy living inclusive of physical activity and presenteeism. Correlational analysis was used to asses the relationships among culture, mental health and productivity. The results indicated that indirect effects of workplace culture on productivity, mediated by anxiety and depression symptoms were significant. Healthy living culture and anxiety were significantly negatively associated and anxiety and presenteeism were significantly positively associated.\\
+\noindent Another study by Magtibay et al. (2017) assessed the efficacy of blended learning which was intended to decrease stress and burnout among nurses through the use of the Stress Management and Resiliency Training (SMART) program. Consistent with blended learning, participants chose the format that met their learning styles and goals; Web-based, independent reading or facilitated discussions. The end points of mindfulness, resilience, anxiety, stress, happiness, and burnout were measured at baseline, postintervention, and 3-month follow-up to examine within-group differences. The results indicated statistically significant, clinically meaningful decreases in anxiety, stress, and burnout and increases in resilience, happiness, and mindfulness. \\
+\noindent Levis et al. (2019), evaluate the accuracy of the Patient Health Questionnaire-9 (PHQ-9) for screening major depression in adults using individual participant data meta-analysis. The study, which was conducted by the DEPRESsion Screening Data (DEPRESSD) Collaboration, analyzed data from 58 studies, with a total of 17 357 participants. It was found that combined sensitivity and specificity was maximized at a cut-off score of 10 or above among studies using a semi-structured interview. Secondly across cut-off scores of 5-15, sensitivity with semi-structured interviews was 5\%-22\% higher than for fully structured interviews.  \\
+\noindent Leung et al. (2020) investigated the factor structure, reliability, and construct validity of the Patient Health Questionnaire-9 (PHQ-9) in a community sample of 10 933 Chinese adolescents. Confirmatory factor analysis (CFA) was used to examine the one-factor structure of the PHQ-9, and multiple-group CFAs were performed to test for measurement invariance across gender and age subgroups. Internal consistency reliability was evaluated using Cronbach alpha, and construct validity was assessed using Pearson correlation coefficients between PHQ-9 scores and anxiety, self-esteem and perceived control. The results indicated that a one-factor model with three pairs of items correlations fitted the PHQ-9 data well and that measurement invariances by age and gender were supported. The PHQ-9 was also strongly correlated with anxiety, self-esteem and perceived control.\\
+\noindent In a recent study, Levis et al. (2020), a meta-analysis of 44 studies was conducted to compare the sensitivity and specificity of the PHQ-2 alone and combined with PHQ-9.The Individual participant data were obtained from 100 eligible studies comprising of 44 318 participants, of which 4572 had major depression. The authors found that the combination of PHQ-2 followed by PHQ-9 had similar sensitivity but higher specificity compared with PHQ-9.\\
+\noindent In a more recent study, Lister et al. (2023) conducted a qualitative study that investigated the barriers and enablers to mental wellbeing and academic success that students experienced in distance learning. Narrative enquiry was used whereby students shared their own stories and tutors shared stories about the students they had supported. In total, 60 themes were identified, consisting of 155 sub-themes and 783 coded references. The barriers and enablers were then clustered into three overall categories; study-related barriers/enablers, skills-related barriers/enablers and environmental barriers/enablers, and 10 sub-categories, curriculum, tuition, assessment, social skills, self-management, study skills, spaces, systems, people and life. It was found that barriers and enablers were existent in the majority of themes, implying that different aspects of study could be both barriers or enablers for mental wellbeing and study success, depending on who was experiencing them and how, for example, assessment feedback was a barrier for students when it was negative, but was an enabler when it was constructive and took place in an environment of trust.\\
+\noindent In summary, the past research works on mental health have been conducted using Meta-analysis, Qualitative techniques, CFA and Narrative enquiry. Factor Analysis is utilized in this study to identify the latent constructs from the Depression Severity Questionnaire administered to the Kenyan youth population.\\
+\newpage
+\section*{CHAPTER 3}
+\section*{FACTOR ANALYSIS}
+\subsection*{3.1 Introduction}
+This chapter presents the theory of Factor Analysis, inclusive of Principal Component Solution of the Factor Model, as illustrated in the following subsections.
+
+\subsection*{3.2 Factor Analysis}
+Factor analysis describes the inter-relationships among many variables in terms of a few underlying, but unobservable, random quantities called factors, which are common among the original variables.\\
+
+\noindent The general model of Factor Analysis(FA) assumes that the observed variables are linear combinations of a smaller number of latent factors, which are unobserved variables that are assumed to be the true causes of the observed variables.\\
+
+
+\subsection*{3.3 The Factor Model}
+Let $X$ be an observable random vector, with $p$ components, mean $\mu$ and covariance matrix $\Sigma$.The Factor model postulates that $X$ is linearly dependent upon a few unobservable random variables $F_1, F_2, F_3, \cdots, F_m$, called \emph{common factors}, and $p$ additional sources of variations $\varepsilon_1, \varepsilon_2, ..........\varepsilon_p$ called \emph{errors}.\\
+\noindent The general model of a Factor analysis is, Johnson and Wichern, (2007)
+\begin{equation}
+	\begin{gathered}
+		X_1-\mu_1=\ell_{11}F_1+\ell_{12}F_2+\cdots+\ell_{1 m} F_m+\varepsilon_1 \\
+		X_2-\mu_2=\ell_{21} F_1+\ell_{22} F_2+\cdots+\ell_{2 m}F_m+\varepsilon_2 \\
+		\vdots \\
+		\vdots \\
+		X_p-\mu_p=\ell_{p 1}F_1+\ell_{p 2} F_2+\cdots+\ell_{p m}F_m+\varepsilon_p
+	\end{gathered}
+\end{equation}
+or in matrix notation
+\begin{equation}
+\underset{(p \times 1)}{\mathbf{X}-\boldsymbol{\mu}}=\underset{(p \times m)(m \times 1)}{\mathbf{L}}+\underset{(p \times 1)}{\boldsymbol{\varepsilon}}
+\end{equation}
+
+
+\noindent The coefficient $\mathbf{\ell_{ij}}$ is called the loading on the $i^{th}$ variable on the $j^{th}$ factor, so the matrix $\mathbf{L}$ is the matrix of the factor loadings. \\
+Note that the $i^{th}$ specific factor $\varepsilon_i$; is associated only 
+with the $i^{th}$ response $X$;. The $p$ deviations $X_1 - \mu_1,  X_2- \mu_2, \cdots X_p- \mu_p$  are expressed in terms of $p + m$ random variables $F_1 ,F_2, ... , F_m, \varepsilon_1, \varepsilon_2,\cdots , \varepsilon_p$ which are unobservable. \\
+\noindent The following assumptions about the random vectors $\mathbf{F}$ and $\mathbf{\varepsilon_i}$ are made;
+
+\begin{bracketedromanenum}
+	\item $E(\mathbf{F})= \underbrace{\mathbf{0}}_{m \times 1}$
+	\item  $E(\boldsymbol{\varepsilon})= \underbrace{\mathbf{0}}_{p \times 1}$
+	
+	\item $Cov(\mathbf{F})= E[\mathbf{FF'}]=\underbrace{\textbf{I}}_{m \times 1}$
+	\item 
+	\begin{equation*}
+		Cov(\boldsymbol{\varepsilon})= \underbrace{\boldsymbol{\Psi}}_{p \times p}  = \begin{pmatrix}
+			\psi_{1} & 0 & \cdots & 0 \\
+			0 & \psi_{2} & \cdots & 0 \\
+			\vdots & \vdots & \ddots & \vdots \\
+			0 & 0 & \cdots & \psi_{p}
+		\end{pmatrix}
+	\end{equation*}
+	\item $\mathbf{F}$ and $\boldsymbol{\varepsilon}$ is independent so $$Cov(\mathbf{\boldsymbol{\varepsilon}, F'})=E(\mathbf{\boldsymbol{\varepsilon} F'}) = \underbrace{\mathbf{0}}_{p \times m}$$
+\end{bracketedromanenum}
+
+\subsection* {3.4  Factor Model with m Common Factors}
+When $\mathbf{m}$ factors are involved, the equation (2) above becomes
+\begin{equation}
+	\underbrace{\mathbf{X}}_\text{(p $\times$ 1)}=\underbrace{\boldsymbol{\mu}}_{p \times 1}
+	+\underbrace{\mathbf{L}}_\text{(p $\times$ m)} \underbrace{\mathbf{F}}_\text{(p $\times$ 1)} + \underbrace{\boldsymbol{\varepsilon}}_\text{(p $\times$ 1)}
+\end{equation}
+\noindent where,\\
+$\mu_i$ = mean of variable $i$ \\
+$\varepsilon_i$ = $i^{th}$ specific factor \\
+$F_j$ = $j^{th}$ common factor\\
+$\ell_{ij}$ = loading of the $i^{th}$ variable on the $j^{th}$ factor.\\
+
+\noindent The unobservable random vectors $\mathbf{F}$ and $\boldsymbol{\varepsilon}$ satisfy the following conditions:
+\begin{bracketedromanenum}
+	\item  $\mathbf{F}$ and $\boldsymbol{\varepsilon}$ are Independent\\
+	\item $E(\mathbf{F})= \mathbf{0}$\\
+	\item  $Cov(\mathbf{F})= \mathbf{1}$\\
+	\item  $E(\boldsymbol{\varepsilon})= \mathbf{0}$\\
+	\item  $Cov(\boldsymbol{\varepsilon})= \boldsymbol{\Psi} $ where $\boldsymbol{\Psi}$ is a diagonal matrix
+	
+	$$\begin{pmatrix}
+		\psi_{1} & 0 & \cdots & 0 \\
+		0 & \psi_{2} & \cdots & 0 \\
+		\vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & \cdots & \psi_{p}
+	\end{pmatrix}$$
+\end{bracketedromanenum}
+
+\subsection*{3.5 Covariance Structure for the  Factor Model}
+\noindent The Factor model implies a covariance structure for $X$. From the 
+model in equation 3, 
+\begin{equation}
+	\begin{aligned}
+		(\mathbf{X}-\boldsymbol{\mu})(\mathbf{X}-\boldsymbol{\mu})' &= (\mathbf{LF}+\boldsymbol{\varepsilon})(\mathbf{LF}+ \boldsymbol{\varepsilon})' \\
+		&= (\mathbf{LF}+\boldsymbol{\varepsilon})((\mathbf{LF})'+\boldsymbol{\varepsilon}') \\
+		&= \mathbf{LF(LF)'} + \mathbf{\varepsilon(LF)' + LF \boldsymbol{\varepsilon}' + \boldsymbol{\varepsilon}\boldsymbol{\varepsilon} }\\
+	\end{aligned}
+\end{equation}
+So that
+\begin{equation}
+	\begin{aligned}
+		\Sigma & = Cov(\mathbf{X}) = E(\mathbf{X}- \boldsymbol{\mu})(\mathbf{X}- \boldsymbol{\mu})' \\
+		&=\mathbf{L}E(\mathbf{FF')L'}+ E(\mathbf{\boldsymbol{\varepsilon} F')L' + LE(F \boldsymbol{\varepsilon}')}+E(\boldsymbol{\varepsilon}\boldsymbol{\varepsilon}')\\
+		&= \mathbf{LL'}+ \boldsymbol{\varepsilon}
+	\end{aligned}
+\end{equation}
+\noindent therefore,
+$$Cov(\mathbf{X)=LL'} +\boldsymbol{\Psi}$$ 
+or
+\begin{equation}
+	\begin{aligned}
+		Var(X_i)= \ell_{i1}^2 + \ell_{i2}^2 + \cdots +\ell_{im}^2 + \psi_i \\
+		Cov(X_i,\mathbf{X}_k) = \ell_{i1}l_{k1} + \ell_{i2}l_{k2} + \cdots +\ell_{im}\ell_{km}
+	\end{aligned}
+\end{equation}
+
+
+\noindent Also by independence $Cov(\boldsymbol{\varepsilon, F'})=E(\boldsymbol{\varepsilon}\mathbf{F'}) =\mathbf{0}$ \\
+Also, by the model in the (equation 3),
+$$(\mathbf{X - \boldsymbol{\mu})F'= (LF +\boldsymbol{\varepsilon})F'=LFF' +\boldsymbol{\varepsilon} F'}$$
+
+$$Cov(\mathbf{X,F})= E(\mathbf{X}-\boldsymbol{\varepsilon})F'= \mathbf{L}E(\mathbf{FF'}) + E(\mathbf{\boldsymbol{\varepsilon} F')= L}$$
+
+\noindent Model $X-\mu = LF + \epsilon $ is linear in the common factors. If the $p$ responses $\mathbf{X}$ are, in fact, related to underlying factors, but the relationship is nonlinear, such as in $\mathbf{ X}_1 -\boldsymbol{\mu_1}= \ell_{11}\mathbf{F}_1\mathbf{F}_3 + \epsilon_1, \mathbf{X}_2 -\boldsymbol{\mu_2}= \ell_{21}\mathbf{F}_2\mathbf{F}_3 + \epsilon_2$,and so forth,then the covariance structure $LL' + \Psi $ given by (equation 6) may not be adequate. The very important assumption of linearity is inherent in the formulation of the traditional factor model. \\
+
+\noindent That portion of the variance of the $i^{th}$ variable contributed by them common actors is called the \textbf{$i^{th}$ communality}. That portion of $Var (X_i) = \sigma_{ii}$ due to the specific factor is often called the uniqueness, or specific variance. Denoting the $i^{th}$ communality by $h_i^2$, we see from (equation 6) that
+
+\begin{equation}
+	\underbrace{\sigma_{ii}}_{Var(X_i)}= \underbrace{\ell_{i1}^2 + \ell_{i2}^2 + \cdots +\ell_{im}^2}_\text{Communality} +\underbrace{\psi_i}_\text{Unique variance}
+\end{equation}
+where
+$$
+\widetilde{h}_i^2=\tilde{\ell}_{i 1}^2+\tilde{\ell}_{i 2}^2+\cdots+\tilde{\ell}_{i m}^2
+$$
+
+\noindent and 
+$$\sigma_{ii}= h_i^2 + \varepsilon_i ; \hspace{2cm} i= 1,2, \cdots , p$$
+
+\noindent The $i^{th}$ communality is the sum of squares of the loadings of the ith variable on the $m$ common factors.
+
+
+\noindent The factor model assumes that the $p+p(p-1) / 2=p(p+1) / 2$ variances and covariances for $\mathbf{X}$ can be reproduced from the $p m$ factor loadings $\ell_{i j}$ and the $p$ specific variances $\psi_i$. When $m=p$, any covariance matrix $\Sigma$ can be reproduced exactly as $\mathbf{L} \mathbf{L}^{\prime}$, so $\Psi$ can be the zero matrix. However, it is when $m$ is small relative to $p$ that factor analysis is most useful. In this case, the factor model provides a "simple" explanation of the covariation in $\mathbf{X}$ with fewer parameters than the $p(p+1) / 2$ parameters in $\mathbf{\Sigma}$. For example, if $\mathbf{X}$ contains $p=12$ variables, and the factor model in (equation 4) with $m=2$ is appropriate, then the $p(p+1) / 2=12(13) / 2=78$ elements of $\mathbf{\Sigma}$ are described in terms of the $m p+p=12(2)+12=36$ parameters $\ell_{i j}$ and $\psi_i$ of the factor model.\\
+
+
+\noindent When $m>1$, there is always some inherent ambiguity associated with the factor model. To see this, let $\mathbf{T}$ be any $m \times m$ orthogonal matrix, so that $\mathbf{T T}^{\prime}=\mathbf{T}^{\prime} \mathbf{T}=\mathbf{I}$. Then the expression in (2) can be written
+\begin{equation}
+	\mathbf{X}-\boldsymbol{\mu}=\mathbf{L F}+\varepsilon=\mathbf{L T T}^{\prime} \mathbf{F}+\varepsilon=\mathbf{L}^* \mathbf{F}^*+\boldsymbol{\varepsilon}
+\end{equation}
+where
+$$
+\mathbf{L}^*=\mathbf{L T} \text { and } \mathbf{F}^*=\mathbf{T}^{\prime} \mathbf{F}
+$$
+Since
+$$
+E\left(\mathbf{F}^*\right)=\mathbf{T}^{\prime} E(\mathbf{F})=\mathbf{0}
+$$
+and
+$$
+\operatorname{Cov}\left(\mathbf{F}^*\right)=\mathbf{T}^{\prime} \operatorname{Cov}(\mathbf{F}) \mathbf{T}=\mathbf{T}^{\prime} \mathbf{T}=\underset{(m \times m)}{\mathbf{I}}
+$$
+it is impossible, on the basis of observations on $\mathbf{X}$, to distinguish the loadings $\mathbf{L}$ from the loadings $\mathbf{L}^*$. That is, the factors $\mathbf{F}$ and $\mathbf{F}^*=\mathbf{T}^{\prime} \mathbf{F}$ have the same statistical properties, and even though the loadings $\mathbf{L}^*$ are, in general, different from the loadings $\mathbf{L}$, they both generate the same covariance matrix $\mathbf{\Sigma}$. That is,
+\begin{equation}
+	\mathbf{\Sigma}=\mathbf{L L}^{\prime}+\Psi=\mathbf{L T T}^{\prime} \mathbf{L}^{\prime}+\Psi=\left(\mathbf{L}^*\right)\left(\mathbf{L}^*\right)^{\prime}+\Psi
+\end{equation}
+This ambiguity provides the rationale for "factor rotation," since orthogonal matrices correspond to rotations (and reflections) of the coordinate system for $\mathbf{X}$.
+
+\noindent Factor loadings $\mathbf{L}$ are determined only up to an orthogonal matrix $\mathbf{T}$. Thus, the loadings
+\begin{equation}
+	\mathbf{L}^*=\mathbf{L T} \text { and } \mathbf{L}
+\end{equation}
+both give the same representation. The communalities, given by the diagonal elements of $\mathbf{L} \mathbf{L}^{\prime}=\left(\mathbf{L}^*\right)\left(\mathbf{L}^*\right)^{\prime}$ are also unaffected by the choice of $\mathbf{T}$.
+
+\noindent The analysis of the Factor Model proceeds by imposing conditions that allow one to uniquely estimate $\mathbf{L}$ and $\Psi$. The loading matrix is then rotated (multiplied by an orthogonal matrix), where the rotation is determined by some "ease-ofinterpretation" criterion. Once the loadings and specific variances are obtained, factors are identified, and estimated values for the factors themselves (called factor scores) are frequently constructed.
+
+\subsection*{3.6 Principal Component Solution of the Factor Model}
+
+The principal component Factor Analysis of the sample covariance matrix $\mathbf{S}$ is specified in terms of its eigenvalue-eigenvector pairs $\left(\hat{\lambda}_1, \hat{\mathbf{e}}_1\right),\left(\hat{\lambda}_2, \hat{\mathbf{e}}_2\right), \ldots$, $\left(\hat{\lambda}_p, \hat{\mathbf{e}}_p\right)$, where $\hat{\lambda}_1 \geq \hat{\lambda}_2 \geq \cdots \geq \hat{\lambda}_p$. Let $m<p$ be the number of common factors. Then the matrix of estimated factor loadings $\left\{\tilde{\ell}_{i j}\right\}$ is given by
+\begin{equation}
+	\tilde{\mathbf{L}}=\left[\sqrt{\hat{\lambda}_1} \hat{\mathbf{e}}_1: \sqrt{\hat{\lambda}_2} \hat{\mathbf{e}}_2: \cdots: \sqrt{\hat{\lambda}_{\mathrm{m}}} \hat{\mathbf{e}}_{\mathrm{m}}\right]
+\end{equation}
+The estimated specific variances are provided by the diagonal elements of the matrix $\mathbf{S}-\widetilde{\mathbf{L}} \mathbf{L}^{\prime}$, so
+\begin{equation}
+	\widetilde{\Psi}=\left[\begin{array}{cccc}
+		\widetilde{\psi}_1 & 0 & \cdots & 0 \\
+		0 & \widetilde{\psi}_2 & \cdots & 0 \\
+		\vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & \cdots & \widetilde{\psi}_p
+	\end{array}\right] \text { with } \widetilde{\psi}_i=s_{i i}-\sum_{j=1}^m \tilde{\ell}_{i j}^2
+\end{equation}
+Communalities are estimated as
+\begin{equation}
+	\widetilde{h}_i^2=\tilde{\ell}_{i 1}^2+\tilde{\ell}_{i 2}^2+\cdots+\tilde{\ell}_{i m}^2
+\end{equation}
+
+\noindent For the principal component solution, the estimated loadings for a given factor do not change as the number of factors is increased. For example, if $m=1$, $\tilde{\mathbf{L}}=\left[\sqrt{\hat{\lambda}_1} \hat{\mathbf{e}}_1\right]$, and if $m=2, \tilde{\mathbf{L}}=\left[\sqrt{\hat{\lambda}_1} \hat{\mathbf{e}}_1: \sqrt{\hat{\lambda}_2} \hat{\mathbf{e}}_2\right]$, where $\left(\hat{\lambda}_1, \hat{\mathbf{e}}_1\right)$ and $\left(\hat{\lambda}_2, \hat{\mathbf{e}}_2\right)$ are the first two eigenvalue-eigenvector pairs for $\mathbf{S}$ (or $\mathbf{R}$ ).
+
+\noindent By the definition of $\widetilde{\psi}_i$, the diagonal elements of $\mathbf{S}$ are equal to the diagonal elements of $\widetilde{\mathbf{L}} \widetilde{\mathbf{L}}^{\prime}+\widetilde{\Psi}$. However, the off-diagonal elements of $S$ are not usually reproduced by $\widetilde{\mathbf{L}} \widetilde{\mathbf{L}}^{\prime}+\widetilde{\Psi}$. How, then, do we select the number of factors $m$ ?
+
+\noindent If the number of common factors is not determined by a priori considerations, such as by theory or the work of other researchers, the choice of $m$ can be based on the estimated eigenvalues in much the same manner as with principal components. Consider the residual matrix
+$$
+\mathbf{S}-\left(\widetilde{\mathbf{L}} \tilde{\mathbf{L}}^{\prime}+\widetilde{\Psi}\right)
+$$
+resulting from the approximation of $S$ by the principal component solution. The diagonal elements are zero, and if the other elements are also small, we may subjectively take the $m$ factor model to be appropriate.
+
+\noindent Consequently, a small value for the sum of the squares of the neglected eigenvalues implies a small value for the sum of the squared errors of approximation.
+
+\noindent Ideally, the contributions of the first few factors to the sample variances of the variables should be large. The contribution to the sample variance $s_{i i}$ from the first common factor is $\widetilde{\ell}_{i 1}^2$. The contribution to the total sample variance, $s_{11}+$ $s_{22}+\cdots+s_{p p}=\operatorname{tr}(S)$, from the first common factor is then
+$$
+\tilde{\ell}_{11}^2+\tilde{\ell}_{21}^2+\cdots+\tilde{\ell}_{p 1}^2=\left(\sqrt{\hat{\lambda}_1} \hat{\mathbf{e}}_1\right)^{\prime}\left(\sqrt{\hat{\lambda}_1} \hat{\mathbf{e}}_1\right)=\hat{\lambda}_1
+$$
+since the eigenvector $\hat{e}_1$ has unit length. In general,
+\begin{equation}
+	\left(\begin{array}{c}
+		\text { Proportion of total } \\
+		\text { sample variance } \\
+		\text { due to } j \text { th factor }
+	\end{array}\right)=\left\{\begin{array}{cl}
+		\frac{\hat{\lambda}_j}{s_{11}+s_{22}+\cdots+s_{p p}} & \text { for a factor analysis of } \mathbf{S} \\
+		\frac{\hat{\lambda}_j}{p} & \text { for a factor analysis of } \mathbf{R}
+	\end{array}\right.
+\end{equation}
+Criterion (14) above is frequently used as a heuristic device for determining the appropriate number of common factors. The number of common factors retained in the model is increased until a "suitable proportion" of the total sample variance has been explained.
+
+\noindent Another convention, frequently encountered in packaged computer programs, is to set $m$ equal to the number of eigenvalues of $\mathbf{R}$ greater than one if the sample correlation matrix is factored, or equal to the number of positive eigenvalues of $S$ if the sample covariance matrix is factored. These rules of thumb should not be applied indiscriminately. For example, $m=p$ if the rule for $\mathbf{S}$ is obeyed, since all the eigenvalues are expected to be positive for large sample sizes. The best approach is to retain few rather than many factors, assuming that they provide a satisfactory interpretation of the data and yield a satisfactory fit to $\mathbf{S}$ or $\mathbf{R}$.
+
+\subsection*{3.7 Factor Rotation}
+
+As we indicated in Section 3.3, all factor loadings obtained from the initial loadings by an orthogonal transformation have the same ability to reproduce the covariance (or correlation) matrix. From matrix algebra, we know that an orthogonal transformation corresponds to a rigid rotation of the coordinate axes. For this reason, an orthogonal transformation of the factor loadings, as well as the implied orthogonal transformation of the factors, is called factor rotation.
+
+\noindent If $\hat{\mathbf{L}}$ is the $p \times m$ matrix of estimated factor loadings then
+\begin{equation}
+	\hat{\mathbf{L}}^*=\hat{\mathbf{L}} \mathbf{T}, \quad \text { where } \mathbf{T T}^{\prime}=\mathbf{T}^{\prime} \mathbf{T}=\mathbf{I}
+\end{equation}
+is a $p \times m$ matrix of "rotated" loadings. Moreover, the estimated covariance (or correlation) matrix remains unchanged, since
+\begin{equation}
+	\hat{\mathbf{L}} \hat{\mathbf{L}}^{\prime}+\hat{\Psi}=\hat{\mathbf{L}} \mathbf{T T}^{\prime} \hat{\mathbf{L}}+\hat{\boldsymbol{\Psi}}=\hat{\mathbf{L}}^* \hat{\mathbf{L}}^*+\hat{\boldsymbol{\Psi}}
+\end{equation}
+Equation (15) indicates that the residual matrix, $\mathbf{S}_{n_{\hat{n}}}-\hat{\mathbf{L}} \hat{\mathbf{L}}^{\prime}-\hat{\Psi}=\mathbf{S}_n-\hat{\mathbf{L}} \hat{\mathbf{L}}^{* \prime}-\hat{\Psi}$, remains unchanged. Moreover, the specific variances $\hat{\psi}_i$, and hence the communalities $\hat{h}_i^2$, are unaltered. Thus, from a mathematical viewpoint, it is immaterial whether $\hat{\mathbf{L}}$ or $\hat{\mathbf{L}}^*$ is obtained.
+
+\noindent Since the original loadings may not be readily interpretable, it is usual practice to rotate them until a "simpler structure" is achieved. The rationale is very much akin to sharpening the focus of a microscope in order to see the detail more clearly.
+Ideally, we should like to see a pattern of loadings such that each variable loads highly on a single factor and has small to moderate loadings on the remaining factors. However, it is not always possible to get this simple structure.
+We shall concentrate on graphical and analytical methods for determining an orthogonal rotation to a simple structure. When $m=2$, or the common factors are considered two at a time, the transformation to a simple structure can frequently be determined graphically. The uncorrelated common factors are regarded as unitvectors along perpendicular coordinate axes. A plot of the pairs of factor loadings $\left(\hat{\ell}_{i 1}, \hat{\ell}_{i 2}\right)$ yields $p$ points, each point corresponding to a variable. The coordinate axes can then be visually rotated through an angle-call it $\phi$-and the new rotated loadings $\hat{\ell}_{i j}^*$ are determined from the relationships
+\begin{equation}
+	\underset{(p \times 2)}{\hat{\mathbf{L}} *}=\underset{(p \times 2)(2 \times 2)}{\hat{\mathbf{L} \mathbf{T}}}
+\end{equation}
+where \\
+$$\begin{gathered}
+	\mathbf{T}=\left[\begin{array}{rr}
+		\cos \phi & \sin \phi \\
+		-\sin \phi & \cos \phi
+	\end{array}\right] \begin{array}{l}
+		\text { clockwise } \\
+		\text { rotation }
+	\end{array} \\
+	\mathbf{T}=\left[\begin{array}{rr}
+		\cos \phi & -\sin \phi \\
+		\sin \phi & \cos \phi
+	\end{array}\right] \quad \begin{array}{c}
+		\text { counterclockwise } \\
+		\text { rotation }
+	\end{array}
+\end{gathered}
+$$
+The relationship in (17) is rarely implemented in a two-dimensional graphical analysis. In this situation, clusters of variables' are often apparent by eye, and these clusters enable one to identify the common factors without having to inspect the magnitudes of the rotated loadings. On the other hand, for $m>2$, orientations are not easily visualized, and the magnitudes of the rotated loadings must be inspected to find a meaningful interpretation of the original data. 
+
+
+\subsection*{3.8 Factor Scoring}
+In factor analysis, interest is usually centered on the parameters in the factor model. However, the estimated values of the common factors, called factor scores, may also be required. These quantities are often used for diagnostic purposes, as well as inputs to a subsequent analysis. Factor scores are not estimates of unknown parameters in the usual sense. Rather, they are estimates of values for the unobserved random factor vectors $F_j; j = 1, 2, ... , n$. That is, factor scores \\
+$\hat{f_i}$ = estimate of the values fi attained by $F_i$ ($jth$ case) 
+
+\noindent The estimation situation is complicated by the fact that the unobserved quantities $\mathbf{f_j}$ and $\mathbf{\varepsilon}$ outnumber the observed $\mathbf{x_j}$. To overcome this difficulty, some rather heuristic, but reasoned, approaches to the problem of estimating factor values have been advanced.\\
+We describe two of these approaches. 
+\noindent Both of the factor score approaches have two elements in common: 
+\begin{enumerate}
+	\item They treat the estimated factor loadings $\mathbf{f_j}$ and specific variances $\hat{\psi}_{ij}$ as if they were the true values. 
+	
+	\item They involve linear transformations of the original data, perhaps centered 
+	or standardized. Typically, the estimated rotated loadings, rather than the 
+	original estimated loadings, are used to compute factor scores.
+\end{enumerate}
+\subsubsection*{3.8.1 Ordinary Least Squares}
+The difference between the th variable on the ith subject and its value under the factor model is computed. The L’s are factor loadings and the f’s are the unobserved common factors. The vector of common factors for subject i, or ˆfi, is found by minimizing the sum of the squared residuals:
+
+\begin{equation}
+	\sum_{j=1}^p \epsilon_{i j}^2=\sum_{j=1}^p\left(x_{i j}-\mu_j-l_{j 1} f_1-l_{j 2} f_2-\ldots-l_{j m} f_m\right)^2=\left(\mathbf{X}_{\mathbf{i}}-\mu-\mathbf{L f}_{\mathbf{i}}\right)^{\prime}\left(\mathbf{X}_{\mathbf{i}}-\mu-\mathbf{L f}_{\mathbf{i}}\right)
+\end{equation}
+
+\noindent This is like a least squares regression, except in this case we already have
+estimates of the parameters (the factor loadings), but wish to estimate the
+explanatory common factors. In matrix notation the solution is expressed as:
+
+$$
+\begin{gathered}
+	\hat{\mathbf{f}}_j=\left(\tilde{\mathbf{L}}^{\prime} \cdot \tilde{\mathbf{L}}^{-1} \widetilde{\mathbf{L}}^{\prime}\left(\mathbf{x}_j-\overline{\mathbf{x}}\right)\right. \\
+	\hat{\mathbf{f}}_j=\left(\tilde{\mathbf{L}}_{\mathbf{z}}^{\prime} \tilde{\mathbf{L}}_{\mathbf{z}}\right)^{-1} \widetilde{\mathbf{L}}_{\mathbf{z}}^{\prime} \mathbf{z}_j
+\end{gathered}
+$$
+Since 
+$$
+\tilde{\mathbf{L}}=\left[\sqrt{\hat{\lambda}_1} \hat{\mathbf{e}}_1: \sqrt{\hat{\lambda}_2} \hat{\mathbf{e}}_2: \cdots: \sqrt{\hat{\lambda}_{\mathrm{m}}} \hat{\mathbf{e}}_{\mathrm{m}}\right]
+$$
+we have
+$$
+\hat{\mathbf{f}}_j=\left[\begin{array}{c}
+	\frac{1}{\sqrt{\hat{\lambda}_1}} \hat{\mathbf{e}}_1^{\prime}\left(\mathbf{x}_j-\tilde{\mathbf{x}}\right) \\
+	\frac{1}{\sqrt{\hat{\lambda}_2}} \hat{\mathbf{e}}_2^{\prime}\left(\mathbf{x}_j-\overline{\mathbf{x}}\right) \\
+	\frac{1}{\sqrt{\hat{\lambda}_m}} \hat{\mathbf{e}}_m^{\prime}\left(\mathbf{x}_j-\overline{\mathbf{x}}\right)
+\end{array}\right]
+$$
+
+For these factor scores,
+$$
+\frac{1}{n} \sum_{j=1}^n \hat{\mathbf{f}}_j=0 \quad \text { (sample mean) }
+$$
+$$
+\frac{1}{n-1} \sum_{i=1}^n \hat{\mathbf{f}}_j \hat{\mathbf{f}}_j^{\prime}=\mathbf{I} \quad \text { (sample covariance) }
+$$
+
+
+
+\newpage
+
+\section*{REFERENCES}
+\begin{enumerate}
+	\item Jain G., Roy A., Harikrishnan V., Yu S., Dabbous O. and Lawrence, C. (2013), Patient-Reported Depression Severity Measured by the PHQ-9 and Impact on Work Productivity, \emph{Journal of Occupational and Environmental Medicine}, 55(3), 252-258.
+	\item Johnson R.A. and Wichern D.W.,Applied Multivariate Statistical Analysis, Pearson Education, Inc., 2007.
+	
+	\item Laing S. S., and Jones S. M. (2016), Anxiety and Depression Mediate the Relationship between Perceived Workplace Health Support and Presenteeism, \emph{Journal of Occupational and Environmental Medicine}, 58(11), 1144-1149.
+	
+	\item Leung D. Y., Mak Y. W., Leung S. F., Chiang V. C. and Loke A. Y. (2020), Measurement Invariances of the PHQ‐9 Across Gender and Age Groups in Chinese Adolescents,\emph{ Asia‐Pacific Psychiatry}, 12(3).
+	
+	\item Levis B., Benedetti A. and Thombs B. D. (2019), Accuracy of Patient Health Questionnaire-9 (PHQ-9) For Screening to Detect Major Depression: Individual Participant Data Meta-Analysis,\emph{BMJ}.
+	
+	\item Levis B., Sun Y., He C., Wu Y., Krishnan A., Bhandari P. M. and Thombs B. D. (2020), Accuracy of the PHQ-2 Alone and in Combination with the PHQ-9 for Screening to Detect Major Depression: Systematic Review and Meta-Analysis,\emph{ JAMA}, 323(22), 2290-2300.
+	
+	\item Lister K., Seale J. and Douce C. (2023), Mental Health in Distance Learning: A Taxonomy of Barriers and Enablers to Student Mental Wellbeing, \emph{Open Learning: The Journal of Open, Distance and e-Learning}, 38(2), 102-116.
+	
+	\item Magtibay D. L., Chesak S. S., Coughlin K. and Sood, A. (2017), Decreasing Stress and Burnout in Nurses, \emph{The Journal of Nursing Administration}, 47(7/8), 391-395.
+	
+	\item Martin A., Sanderson K. and Cocker F. (2009), Meta-Analysis of the Effects of Health Promotion Intervention in the Workplace on Depression and Anxiety Symptoms,\emph{Scandinavian Journal of Work, Environment and Health}, 7-18.
+	
+	\item Serpa J. G., Taylor S. L. and Tillisch K. (2014), Mindfulness-Based Stress Reduction (MBSR) Reduces Anxiety, Depression, and Suicidal Ideation in Veterans, \emph{Medical Care}, 52(12), S19-S24.
+\end{enumerate}
+
+\end{document}

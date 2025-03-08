@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{alltt}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{alltt}
+\usepackage{times}
+\usepackage[top=20pt,bottom=20pt]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabu}
+\usepackage{float}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{hyperref}
+\DefineVerbatimEnvironment{Sinput}{Verbatim}{xleftmargin=2em,frame=single}
+\DefineVerbatimEnvironment{Soutput}{Verbatim}{xleftmargin=0em,frame=single}
+\begin{document}
+
+\section{data importation}
+<<warning=FALSE,results='hide',message=FALSE>>=
+library(readxl)
+library(MASS)
+library(robustbase)
+library(DEoptimR)
+library(sgeostat)
+library(mvoutlier)
+library(MVN)
+library(psych)
+library(kableExtra)
+library(dplyr)
+library(ggplot2)
+Data_care<- read_excel("C:/Users/Administrator/Desktop/MS MATHEMATICAL STATISTICS/factor analysis/multiple linear regression/Cleaned Data.Depression among cancer caregivers in a rural setting.xlsx", 
+    sheet = "Rdata")
+View(Data_care)
+@
+
+\section{Data Exploration}
+<<fig.height=6,fig.width=6>>=
+dim(Data_care)
+names(Data_care)
+str(Data_care)
+describe(Data_care)
+
+#Multivariate normality
+chisq.plot(Data_care)
+@
+The data is not multivariate normal. hence we normalize the data by taking logs of the independent random variables.
+
+\subsection{Data Transformation}
+<<fig.height=6,fig.width=6>>=
+PHQ<-Data_care$PHQ
+age_care<-log(Data_care$age_care)
+age_pat<-log(Data_care$age_pat)
+income<-log(Data_care$income)
+
+data_trans<-cbind(PHQ,age_care,age_pat,income)
+
+
+View(data_trans)
+dim(data_trans)
+
+sum(is.na(data_trans))
+sum(is.infinite(data_trans))
+
+#Multivariate normality check of the transformed data
+pairs(data_trans[,-1])
+chisq.plot(data_trans)
+
+@
+From the pairs plot, the data form ellipsoid clusters implying the data is multivariate normal as it is confirmed also by the Mahalanobis distance plot.
+
+\section{Data visualization}
+<<fig.height=6,fig.width=6>>=
+ggplot(Data_care,aes(age_care),fill="blue")+
+  geom_histogram(bins = 15)+
+  labs(x="Frequency",y="Caregiver's Age",title = "Histogram of age of the caregivers")+
+  theme_minimal()
+@
+
+<<fig.height=6,fig.width=6>>=
+ggplot(Data_care,aes(age_pat),color="blue")+
+  geom_histogram(bins=10)+
+  labs(x="frequency",y="Patients age",title = "Histogram of age of the caregivers")+
+  theme_minimal()
+@
+
+
+\section{model building}
+<<>>=
+data1<-as.data.frame(data_trans)
+Model<-lm(PHQ~age_care+age_pat+income, data = data1)
+summary(Model)
+Model$coefficients
+@
+the estimated model is $\bar{y}=11.3014-0.2735x_{1}-0.7151x_{2}-0.4352x_{3}$
+
+\section{model evaluation and diagnostics}
+\subsection{}
+<<fig.height=6,fig.width=6>>=
+#Linearity
+#the relationship between the independent and dependent variable is linear
+plot(PHQ,age_care)
+plot(PHQ,age_pat)
+plot(PHQ,age_pat)
+@
+we expect a linear pattern betweeen the dependent variables and independent vaiables.
+
+\subsection{normality of the residuals}
+<<fig.height=6,fig.width=6>>=
+#normality of the residuals
+
+qqnorm(residuals(Model))
+@
+The qqnorm plot shows the residuals are normally distributed
+
+\subsection{Homoscedasticity}
+<<fig.height=6,fig.width=6>>=
+#Homoscedasticity
+plot(Model$fitted.values,rstandard(Model),ylab="Standardised residuals")
+@
+The variance of the the errors is constant across all the levels as evidenced by the plot above since the residuals have  a constant mean of zero
+
+\subsection{}
+<<fig.height=6,fig.width=6>>=
+#no multicolinearity
+library(car)
+vif(Model)
+@
+Each independent variable has a Variance inflation factor of 1 indicating no correlation between the independent variable and intor variables in the model.
+
+\subsection{Autocorrelation}
+<<fig.height=6,fig.width=6>>=
+#Autocorrelation
+acf(Model$residuals)
+@
+The residuals from independent of each other as shown by the ACF graph.
+There is significant auto-correlation. Hence the residuals are not independent of each other.
+
+\end{document}
+

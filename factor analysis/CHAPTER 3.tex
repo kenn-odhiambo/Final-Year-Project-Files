@@ -1,0 +1,337 @@
+\documentclass[12]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{array}
+\newlist{bracketedromanenum}{enumerate}{1}
+\setlist[bracketedromanenum]{
+	label={(\roman*)},
+	ref={\roman*},
+	itemsep=0.5em,
+	topsep=0.5em
+}
+
+\begin{document}
+
+\section*{CHAPTER 3}
+\section*{FACTOR ANALYSIS}
+\subsection*{3.1 Introduction}
+This chapter presents the theory of Factor Analysis, inclusive of Principal Component Solution of the Factor Model, as illustrated in the following subsections.
+
+\subsection*{3.2 Factor Analysis}
+Factor analysis describes the inter-relationships among many variables in terms of a few underlying, but unobservable, random quantities called factors, which are common among the original variables.\\
+
+\noindent The general model of Factor Analysis(FA) assumes that the observed variables are linear combinations of a smaller number of latent factors, which are unobserved variables that are assumed to be the true causes of the observed variables.\\
+
+
+\subsection*{3.3 The Factor Model}
+Let $X$ be an observable random vector, with $p$ components, mean $\mu$ and covariance matrix $\Sigma$.The Factor model postulates that $X$ is linearly dependent upon a few unobservable random variables $F_1, F_2, F_3, \cdots, F_m$, called \emph{common factors}, and $p$ additional sources of variations $\varepsilon_1, \varepsilon_2, ..........\varepsilon_p$ called \emph{errors}.\\
+\noindent The general model of a Factor analysis is, Johnson and Wichern, (2007)
+\begin{equation}
+	\begin{gathered}
+		X_1-\mu_1=\ell_{11} F_1+\ell_{12} F_2+\cdots+\ell_{1 m} F_m+\varepsilon_1 \\
+		X_2-\mu_2=\ell_{21} F_1+\ell_{22} F_2+\cdots+\ell_{2 m} F_m+\varepsilon_2 \\
+		\vdots \\
+		\vdots \\
+		X_p-\mu_p=\ell_{p 1} F_1+\ell_{p 2} F_2+\cdots+\ell_{p m} F_m+\varepsilon_p
+	\end{gathered}
+\end{equation}
+or in matrix notation
+\begin{equation}
+	\mathbf{X}- \mathbf{\mu}=\mathbf{L}\mathbf{F}+ \mathbf{\varepsilon}
+	\end{equation}
+
+
+\noindent The coefficient $\mathbf{\ell_{ij}}$ is called the loading on the $i^{th}$ variable on the $j^{th}$ factor, so the matrix $\mathbf{L}$ is the matrix of the factor loadings. \\
+Note that the $i^{th}$ specific factor $\varepsilon_i$; is associated only 
+with the $i^{th}$ response $X$;. The $p$ deviations $X_1 - \mu_1,  X_2- \mu_2, \cdots X_p- \mu_p$  are expressed in terms of $p + m$ random variables $F_1 ,F_2, ... , F_m, \varepsilon_1, \varepsilon_2,\cdots , \varepsilon_p$ which are unobservable. \\
+\noindent The following assumptions about the random vectors $\mathbf{F}$ and $\mathbf{\varepsilon_i}$ are made;
+
+	\begin{bracketedromanenum}
+	\item $E(\mathbf{F})= \underbrace{\mathbf{0}}_{m \times 1}$
+	\item  $E(\mathbf{\varepsilon})= \underbrace{\mathbf{0}}_{p \times 1}$
+	
+	\item $Cov(\mathbf{F})= E[\mathbf{FF'}]=\underbrace{\textbf{I}}_{m \times 1}$
+	\item 
+\begin{equation*}
+		Cov(\mathbf{\varepsilon})= \underbrace{\Psi}_{p \times p}  = \begin{pmatrix}
+			\psi_{1} & 0 & \cdots & 0 \\
+			0 & \psi_{2} & \cdots & 0 \\
+			\vdots & \vdots & \ddots & \vdots \\
+			0 & 0 & \cdots & \psi_{p}
+		\end{pmatrix}
+\end{equation*}
+	\item $\mathbf{F}$ and $\mathbf{\varepsilon}$ is independent so $$Cov(\mathbf{\epsilon, F'})=E(\mathbf{\varepsilon F'}) = \underbrace{\mathbf{0}}_{p \times m}$$
+	\end{bracketedromanenum}
+
+\subsection* {3.4  Factor Model with m Common Factors}
+When $\mathbf{m}$ factors are involved, the equation (2) above becomes
+\begin{equation}
+	\underbrace{\mathbf{X}}_\text{(p $\times$ 1)}=\underbrace{\mathbf{\mu}}_{p \times 1}
+	+\underbrace{\mathbf{L}}_\text{(p $\times$ m)} \underbrace{\mathbf{F}}_\text{(p $\times$ 1)} + \underbrace{\varepsilon}_\text{(p $\times$ 1)}
+\end{equation}
+\noindent where,\\
+$\mu_i$ = mean of variable $i$ \\
+$\varepsilon_i$ = $i^{th}$ specific factor \\
+$F_j$ = $j^{th}$ common factor\\
+$\ell_{ij}$ = loading of the $i^{th}$ variable on the $j^{th}$ factor.\\
+
+\noindent The unobservable random vectors $F$ and $\varepsilon$ satisfy the following conditions:
+\begin{bracketedromanenum}
+	\item  $\mathbf{F}$ and $\mathbf{\varepsilon}$ are Independent\\
+	\item $E(\mathbf{F})= \mathbf{0}$\\
+	\item  $Cov(\mathbf{F})= \mathbf{1}$\\
+	\item  $E(\mathbf{\varepsilon})= \mathbf{0}$\\
+	\item  $Cov(\mathbf{\varepsilon})= \Psi $ where $\Psi$ is a diagonal matrix
+	
+	$$\begin{pmatrix}
+		\psi_{1} & 0 & \cdots & 0 \\
+		0 & \psi_{2} & \cdots & 0 \\
+		\vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & \cdots & \psi_{p}
+	\end{pmatrix}$$
+\end{bracketedromanenum}
+
+\subsection*{3.5 Covariance Structure for the  Factor Model}
+\noindent The Factor model implies a covariance structure for $X$. From the 
+model in equation 3, 
+\begin{equation}
+	\begin{aligned}
+		(\mathbf{X}-\mathbf{\mu})(\mathbf{X}-\mathbf{\mu})' &= (\mathbf{LF}+\varepsilon)(\mathbf{LF}+\varepsilon)' \\
+		&= (\mathbf{LF}+\varepsilon)((\mathbf{LF})'+\varepsilon') \\
+		&= \mathbf{LF(LF)'} + \mathbf{\varepsilon(LF)' + LF\varepsilon' + \varepsilon\varepsilon }\\
+	\end{aligned}
+\end{equation}
+So that
+\begin{equation}
+	\begin{aligned}
+		\Sigma & = Cov(\mathbf{X}) = E(\mathbf{X-\mu})(\mathbf{X-\mu})' \\
+		&=\mathbf{LE(FF')L'}+ E(\mathbf{\varepsilon F')L' + LE(F\varepsilon')}+E(\varepsilon\varepsilon')\\
+		&= \mathbf{LL' + \Psi}
+	\end{aligned}
+\end{equation}
+\noindent therefore,
+$$Cov(\mathbf{X)=LL'} +\Psi$$ 
+or
+\begin{equation}
+	\begin{aligned}
+		Var(\mathbf{X}_i)= \ell_{i1}^2 + \ell_{i2}^2 + \cdots +\ell_{im}^2 + \psi_i \\
+		Cov(\mathbf{X_i},\mathbf{X}_k) = \ell_{i1}l_{k1} + \ell_{i2}l_{k2} + \cdots +\ell_{im}\ell_{km}
+	\end{aligned}
+\end{equation}
+
+
+\noindent Also by independence $Cov(\mathbf{\varepsilon, F'})=E(\mathbf{\varepsilon F'}) =\mathbf{0}$ \\
+Also, by the model in the (equation 3),
+$$(\mathbf{X - \mu)F'= (LF +\varepsilon)F'=LFF' +\varepsilon F'}$$
+$$Cov(\mathbf{X,F})= E(\mathbf{X-\mu)F'}= \mathbf{L}E(\mathbf{FF'}) + E(\mathbf{\varepsilon F')= L}$$
+
+\noindent Model $X-\mu = LF + \epsilon $ is linear in the common factors. If the $p$ responses $X$ are, in fact, related to underlying factors, but the relationship is nonlinear, such as in $\mathbf{ X}_1 -\mu_1= \ell_{11}\mathbf{F}_1\mathbf{F}_3 + \epsilon_1, \mathbf{X}_2 -\mu_2= \ell_{21}\mathbf{F}_2\mathbf{F}_3 + \epsilon_2$,and so forth,then the covariance structure $LL' + \Psi $ given by (equation 6) may not be adequate. The very important assumption of linearity is inherent in the formulation of the traditional factor model. \\
+
+\noindent That portion of the variance of the $i^{th}$ variable contributed by the $m$ common factors is called the \textbf{$i^{th}$ communality}. That portion of $Var (X_i) = \sigma_{ii}$ due to the specific factor is often called the uniqueness, or specific variance. Denoting the $i^{th}$ communality by $h_i^2$, we see from (equation 7) that
+
+\begin{equation}
+	\underbrace{\sigma_{ii}}_{Var(X_i)}= \underbrace{l_{i1}^2 + l_{i2}^2 + \cdots +l_{im}^2}_\text{Communality} +\underbrace{\psi_i}_\text{Unique variance}
+\end{equation}
+where
+$$
+\widetilde{h}_i^2=\tilde{\ell}_{i 1}^2+\tilde{\ell}_{i 2}^2+\cdots+\tilde{\ell}_{i m}^2
+$$
+
+\noindent and 
+$$\sigma_{ii}= h_i^2 + \varepsilon_i ; \hspace{2cm} i= 1,2, \cdots , p$$
+
+\noindent The $i^{th}$ communality is the sum of squares of the loadings of the ith variable on the $m$ common factors.
+
+
+\noindent The factor model assumes that the $p+p(p-1) / 2=p(p+1) / 2$ variances and covariances for $\mathbf{X}$ can be reproduced from the $p m$ factor loadings $\ell_{i j}$ and the $p$ specific variances $\psi_i$. When $m=p$, any covariance matrix $\Sigma$ can be reproduced exactly as $\mathbf{L} \mathbf{L}^{\prime}$, so $\Psi$ can be the zero matrix. However, it is when $m$ is small relative to $p$ that factor analysis is most useful. In this case, the factor model provides a "simple" explanation of the covariation in $\mathbf{X}$ with fewer parameters than the $p(p+1) / 2$ parameters in $\mathbf{\Sigma}$. For example, if $\mathbf{X}$ contains $p=12$ variables, and the factor model in (equation 4) with $m=2$ is appropriate, then the $p(p+1) / 2=12(13) / 2=78$ elements of $\mathbf{\Sigma}$ are described in terms of the $m p+p=12(2)+12=36$ parameters $\ell_{i j}$ and $\psi_i$ of the factor model.\\
+
+
+\noindent When $m>1$, there is always some inherent ambiguity associated with the factor model. To see this, let $\mathbf{T}$ be any $m \times m$ orthogonal matrix, so that $\mathbf{T T}^{\prime}=\mathbf{T}^{\prime} \mathbf{T}=\mathbf{I}$. Then the expression in (2) can be written
+\begin{equation}
+	\mathbf{X}-\boldsymbol{\mu}=\mathbf{L F}+\varepsilon=\mathbf{L T T}^{\prime} \mathbf{F}+\varepsilon=\mathbf{L}^* \mathbf{F}^*+\boldsymbol{\varepsilon}
+\end{equation}
+where
+$$
+\mathbf{L}^*=\mathbf{L T} \text { and } \mathbf{F}^*=\mathbf{T}^{\prime} \mathbf{F}
+$$
+Since
+$$
+E\left(\mathbf{F}^*\right)=\mathbf{T}^{\prime} E(\mathbf{F})=\mathbf{0}
+$$
+and
+$$
+\operatorname{Cov}\left(\mathbf{F}^*\right)=\mathbf{T}^{\prime} \operatorname{Cov}(\mathbf{F}) \mathbf{T}=\mathbf{T}^{\prime} \mathbf{T}=\underset{(m \times m)}{\mathbf{I}}
+$$
+it is impossible, on the basis of observations on $\mathbf{X}$, to distinguish the loadings $\mathbf{L}$ from the loadings $\mathbf{L}^*$. That is, the factors $\mathbf{F}$ and $\mathbf{F}^*=\mathbf{T}^{\prime} \mathbf{F}$ have the same statistical properties, and even though the loadings $\mathbf{L}^*$ are, in general, different from the loadings $\mathbf{L}$, they both generate the same covariance matrix $\mathbf{\Sigma}$. That is,
+\begin{equation}
+	\mathbf{\Sigma}=\mathbf{L L}^{\prime}+\Psi=\mathbf{L T T}^{\prime} \mathbf{L}^{\prime}+\Psi=\left(\mathbf{L}^*\right)\left(\mathbf{L}^*\right)^{\prime}+\Psi
+\end{equation}
+This ambiguity provides the rationale for "factor rotation," since orthogonal matrices correspond to rotations (and reflections) of the coordinate system for $\mathbf{X}$.
+
+\noindent Factor loadings $\mathbf{L}$ are determined only up to an orthogonal matrix $\mathbf{T}$. Thus, the loadings
+\begin{equation}
+	\mathbf{L}^*=\mathbf{L T} \text { and } \mathbf{L}
+\end{equation}
+both give the same representation. The communalities, given by the diagonal elements of $\mathbf{L} \mathbf{L}^{\prime}=\left(\mathbf{L}^*\right)\left(\mathbf{L}^*\right)^{\prime}$ are also unaffected by the choice of $\mathbf{T}$.
+
+\noindent The analysis of the Factor Model proceeds by imposing conditions that allow one to uniquely estimate $\mathbf{L}$ and $\Psi$. The loading matrix is then rotated (multiplied by an orthogonal matrix), where the rotation is determined by some "ease-ofinterpretation" criterion. Once the loadings and specific variances are obtained, factors are identified, and estimated values for the factors themselves (called factor scores) are frequently constructed.
+
+\subsection*{3.6 Principal Component Solution of the Factor Model}
+
+The principal component Factor Analysis of the sample covariance matrix $\mathbf{S}$ is specified in terms of its eigenvalue-eigenvector pairs $\left(\hat{\lambda}_1, \hat{\mathbf{e}}_1\right),\left(\hat{\lambda}_2, \hat{\mathbf{e}}_2\right), \ldots$, $\left(\hat{\lambda}_p, \hat{\mathbf{e}}_p\right)$, where $\hat{\lambda}_1 \geq \hat{\lambda}_2 \geq \cdots \geq \hat{\lambda}_p$. Let $m<p$ be the number of common factors. Then the matrix of estimated factor loadings $\left\{\tilde{\ell}_{i j}\right\}$ is given by
+\begin{equation}
+	\tilde{\mathbf{L}}=\left[\sqrt{\hat{\lambda}_1} \hat{\mathbf{e}}_1: \sqrt{\hat{\lambda}_2} \hat{\mathbf{e}}_2: \cdots: \sqrt{\hat{\lambda}_{\mathrm{m}}} \hat{\mathbf{e}}_{\mathrm{m}}\right]
+\end{equation}
+The estimated specific variances are provided by the diagonal elements of the matrix $\mathbf{S}-\widetilde{\mathbf{L}} \mathbf{L}^{\prime}$, so
+\begin{equation}
+	\widetilde{\Psi}=\left[\begin{array}{cccc}
+		\widetilde{\psi}_1 & 0 & \cdots & 0 \\
+		0 & \widetilde{\psi}_2 & \cdots & 0 \\
+		\vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & \cdots & \widetilde{\psi}_p
+	\end{array}\right] \text { with } \widetilde{\psi}_i=s_{i i}-\sum_{j=1}^m \tilde{\ell}_{i j}^2
+\end{equation}
+Communalities are estimated as
+\begin{equation}
+	\widetilde{h}_i^2=\tilde{\ell}_{i 1}^2+\tilde{\ell}_{i 2}^2+\cdots+\tilde{\ell}_{i m}^2
+\end{equation}
+
+\noindent For the principal component solution, the estimated loadings for a given factor do not change as the number of factors is increased. For example, if $m=1$, $\tilde{\mathbf{L}}=\left[\sqrt{\hat{\lambda}_1} \hat{\mathbf{e}}_1\right]$, and if $m=2, \tilde{\mathbf{L}}=\left[\sqrt{\hat{\lambda}_1} \hat{\mathbf{e}}_1: \sqrt{\hat{\lambda}_2} \hat{\mathbf{e}}_2\right]$, where $\left(\hat{\lambda}_1, \hat{\mathbf{e}}_1\right)$ and $\left(\hat{\lambda}_2, \hat{\mathbf{e}}_2\right)$ are the first two eigenvalue-eigenvector pairs for $\mathbf{S}$ (or $\mathbf{R}$ ).
+
+\noindent By the definition of $\widetilde{\psi}_i$, the diagonal elements of $\mathbf{S}$ are equal to the diagonal elements of $\widetilde{\mathbf{L}} \widetilde{\mathbf{L}}^{\prime}+\widetilde{\Psi}$. However, the off-diagonal elements of $S$ are not usually reproduced by $\widetilde{\mathbf{L}} \widetilde{\mathbf{L}}^{\prime}+\widetilde{\Psi}$. How, then, do we select the number of factors $m$ ?
+
+\noindent If the number of common factors is not determined by a priori considerations, such as by theory or the work of other researchers, the choice of $m$ can be based on the estimated eigenvalues in much the same manner as with principal components. Consider the residual matrix
+$$
+\mathbf{S}-\left(\widetilde{\mathbf{L}} \tilde{\mathbf{L}}^{\prime}+\widetilde{\Psi}\right)
+$$
+resulting from the approximation of $S$ by the principal component solution. The diagonal elements are zero, and if the other elements are also small, we may subjectively take the $m$ factor model to be appropriate.
+
+\noindent Consequently, a small value for the sum of the squares of the neglected eigenvalues implies a small value for the sum of the squared errors of approximation.
+
+\noindent Ideally, the contributions of the first few factors to the sample variances of the variables should be large. The contribution to the sample variance $s_{i i}$ from the first common factor is $\widetilde{\ell}_{i 1}^2$. The contribution to the total sample variance, $s_{11}+$ $s_{22}+\cdots+s_{p p}=\operatorname{tr}(S)$, from the first common factor is then
+$$
+\tilde{\ell}_{11}^2+\tilde{\ell}_{21}^2+\cdots+\tilde{\ell}_{p 1}^2=\left(\sqrt{\hat{\lambda}_1} \hat{\mathbf{e}}_1\right)^{\prime}\left(\sqrt{\hat{\lambda}_1} \hat{\mathbf{e}}_1\right)=\hat{\lambda}_1
+$$
+since the eigenvector $\hat{e}_1$ has unit length. In general,
+\begin{equation}
+	\left(\begin{array}{c}
+		\text { Proportion of total } \\
+		\text { sample variance } \\
+		\text { due to } j \text { th factor }
+	\end{array}\right)=\left\{\begin{array}{cl}
+		\frac{\hat{\lambda}_j}{s_{11}+s_{22}+\cdots+s_{p p}} & \text { for a factor analysis of } \mathbf{S} \\
+		\frac{\hat{\lambda}_j}{p} & \text { for a factor analysis of } \mathbf{R}
+	\end{array}\right.
+\end{equation}
+Criterion (15) above is frequently used as a heuristic device for determining the appropriate number of common factors. The number of common factors retained in the model is increased until a "suitable proportion" of the total sample variance has been explained.
+
+\noindent Another convention, frequently encountered in packaged computer programs, is to set $m$ equal to the number of eigenvalues of $\mathbf{R}$ greater than one if the sample correlation matrix is factored, or equal to the number of positive eigenvalues of $S$ if the sample covariance matrix is factored. These rules of thumb should not be applied indiscriminately. For example, $m=p$ if the rule for $\mathbf{S}$ is obeyed, since all the eigenvalues are expected to be positive for large sample sizes. The best approach is to retain few rather than many factors, assuming that they provide a satisfactory interpretation of the data and yield a satisfactory fit to $\mathbf{S}$ or $\mathbf{R}$.
+
+\subsection*{3.7 Factor Rotation}
+
+As we indicated in Section 3.3, all factor loadings obtained from the initial loadings by an orthogonal transformation have the same ability to reproduce the covariance (or correlation) matrix. From matrix algebra, we know that an orthogonal transformation corresponds to a rigid rotation of the coordinate axes. For this reason, an orthogonal transformation of the factor loadings, as well as the implied orthogonal transformation of the factors, is called factor rotation.
+
+\noindent If $\hat{\mathbf{L}}$ is the $p \times m$ matrix of estimated factor loadings then
+\begin{equation}
+	\hat{\mathbf{L}}^*=\hat{\mathbf{L}} \mathbf{T}, \quad \text { where } \mathbf{T T}^{\prime}=\mathbf{T}^{\prime} \mathbf{T}=\mathbf{I}
+\end{equation}
+is a $p \times m$ matrix of "rotated" loadings. Moreover, the estimated covariance (or correlation) matrix remains unchanged, since
+\begin{equation}
+	\hat{\mathbf{L}} \hat{\mathbf{L}}^{\prime}+\hat{\Psi}=\hat{\mathbf{L}} \mathbf{T T}^{\prime} \hat{\mathbf{L}}+\hat{\boldsymbol{\Psi}}=\hat{\mathbf{L}}^* \hat{\mathbf{L}}^*+\hat{\boldsymbol{\Psi}}
+\end{equation}
+Equation (16) indicates that the residual matrix, $\mathbf{S}_{n_{\hat{n}}}-\hat{\mathbf{L}} \hat{\mathbf{L}}^{\prime}-\hat{\Psi}=\mathbf{S}_n-\hat{\mathbf{L}} \hat{\mathbf{L}}^{* \prime}-\hat{\Psi}$, remains unchanged. Moreover, the specific variances $\hat{\psi}_i$, and hence the communalities $\hat{h}_i^2$, are unaltered. Thus, from a mathematical viewpoint, it is immaterial whether $\hat{\mathbf{L}}$ or $\hat{\mathbf{L}}^*$ is obtained.
+
+\noindent Since the original loadings may not be readily interpretable, it is usual practice to rotate them until a "simpler structure" is achieved. The rationale is very much akin to sharpening the focus of a microscope in order to see the detail more clearly.
+Ideally, we should like to see a pattern of loadings such that each variable loads highly on a single factor and has small to moderate loadings on the remaining factors. However, it is not always possible to get this simple structure.
+We shall concentrate on graphical and analytical methods for determining an orthogonal rotation to a simple structure. When $m=2$, or the common factors are considered two at a time, the transformation to a simple structure can frequently be determined graphically. The uncorrelated common factors are regarded as unitvectors along perpendicular coordinate axes. A plot of the pairs of factor loadings $\left(\hat{\ell}_{i 1}, \hat{\ell}_{i 2}\right)$ yields $p$ points, each point corresponding to a variable. The coordinate axes can then be visually rotated through an angle-call it $\phi$-and the new rotated loadings $\hat{\ell}_{i j}^*$ are determined from the relationships
+\begin{equation}
+	\underset{(p \times 2)}{\hat{\mathbf{L}} *}=\underset{(p \times 2)(2 \times 2)}{\hat{\mathbf{L} \mathbf{T}}}
+\end{equation}
+where \\
+$$\begin{gathered}
+	\mathbf{T}=\left[\begin{array}{rr}
+		\cos \phi & \sin \phi \\
+		-\sin \phi & \cos \phi
+	\end{array}\right] \begin{array}{l}
+		\text { clockwise } \\
+		\text { rotation }
+	\end{array} \\
+	\mathbf{T}=\left[\begin{array}{rr}
+		\cos \phi & -\sin \phi \\
+		\sin \phi & \cos \phi
+	\end{array}\right] \quad \begin{array}{c}
+		\text { counterclockwise } \\
+		\text { rotation }
+	\end{array}
+\end{gathered}
+$$
+The relationship in (17) is rarely implemented in a two-dimensional graphical analysis. In this situation, clusters of variables' are often apparent by eye, and these clusters enable one to identify the common factors without having to inspect the magnitudes of the rotated loadings. On the other hand, for $m>2$, orientations are not easily visualized, and the magnitudes of the rotated loadings must be inspected to find a meaningful interpretation of the original data. 
+
+
+\subsection*{3.8 Factor Scoring}
+In factor analysis, interest is usually centered on the parameters in the factor model. However, the estimated values of the common factors, called factor scores, may also be required. These quantities are often used for diagnostic purposes, as well as inputs to a subsequent analysis. Factor scores are not estimates of unknown parameters in the usual sense. Rather, they are estimates of values for the unobserved random factor vectors $F_j; j = 1, 2, ... , n$. That is, factor scores \\
+$\hat{f_i}$ = estimate of the values fi attained by $F_i$ ($jth$ case) 
+
+\noindent The estimation situation is complicated by the fact that the unobserved quantities $\mathbf{f_j}$ and $\mathbf{\varepsilon}$ outnumber the observed $\mathbf{x_j}$. To overcome this difficulty, some rather heuristic, but reasoned, approaches to the problem of estimating factor values have been advanced.\\
+We describe two of these approaches. 
+\noindent Both of the factor score approaches have two elements in common: 
+\begin{enumerate}
+	\item They treat the estimated factor loadings $\mathbf{f_j}$ and specific variances $\hat{\psi}_{ij}$ as if they were the true values. 
+	
+	\item They involve linear transformations of the original data, perhaps centered 
+	or standardized. Typically, the estimated rotated loadings, rather than the 
+	original estimated loadings, are used to compute factor scores.
+\end{enumerate}
+\subsubsection*{3.8.1 Ordinary Least Squares}
+The difference between the th variable on the ith subject and its value under the factor model is computed. The L’s are factor loadings and the f’s are the unobserved common factors. The vector of common factors for subject i, or ˆfi, is found by minimizing the sum of the squared residuals:
+
+\begin{equation}
+	\sum_{j=1}^p \epsilon_{i j}^2=\sum_{j=1}^p\left(x_{i j}-\mu_j-l_{j 1} f_1-l_{j 2} f_2-\ldots-l_{j m} f_m\right)^2=\left(\mathbf{X}_{\mathbf{i}}-\mu-\mathbf{L f}_{\mathbf{i}}\right)^{\prime}\left(\mathbf{X}_{\mathbf{i}}-\mu-\mathbf{L f}_{\mathbf{i}}\right)
+\end{equation}
+
+\noindent This is like a least squares regression, except in this case we already have
+estimates of the parameters (the factor loadings), but wish to estimate the
+explanatory common factors. In matrix notation the solution is expressed as:
+
+$$
+\begin{gathered}
+	\hat{\mathbf{f}}_j=\left(\tilde{\mathbf{L}}^{\prime} \cdot \tilde{\mathbf{L}}^{-1} \widetilde{\mathbf{L}}^{\prime}\left(\mathbf{x}_j-\overline{\mathbf{x}}\right)\right. \\
+	\hat{\mathbf{f}}_j=\left(\tilde{\mathbf{L}}_{\mathbf{z}}^{\prime} \tilde{\mathbf{L}}_{\mathbf{z}}\right)^{-1} \widetilde{\mathbf{L}}_{\mathbf{z}}^{\prime} \mathbf{z}_j
+\end{gathered}
+$$
+Since 
+$$
+\tilde{\mathbf{L}}=\left[\sqrt{\hat{\lambda}_1} \hat{\mathbf{e}}_1: \sqrt{\hat{\lambda}_2} \hat{\mathbf{e}}_2: \cdots: \sqrt{\hat{\lambda}_{\mathrm{m}}} \hat{\mathbf{e}}_{\mathrm{m}}\right]
+$$
+we have
+$$
+\hat{\mathbf{f}}_j=\left[\begin{array}{c}
+	\frac{1}{\sqrt{\hat{\lambda}_1}} \hat{\mathbf{e}}_1^{\prime}\left(\mathbf{x}_j-\tilde{\mathbf{x}}\right) \\
+	\frac{1}{\sqrt{\hat{\lambda}_2}} \hat{\mathbf{e}}_2^{\prime}\left(\mathbf{x}_j-\overline{\mathbf{x}}\right) \\
+	\frac{1}{\sqrt{\hat{\lambda}_m}} \hat{\mathbf{e}}_m^{\prime}\left(\mathbf{x}_j-\overline{\mathbf{x}}\right)
+\end{array}\right]
+$$
+
+For these factor scores,
+$$
+\frac{1}{n} \sum_{j=1}^n \hat{\mathbf{f}}_j=0 \quad \text { (sample mean) }
+$$
+$$
+\frac{1}{n-1} \sum_{i=1}^n \hat{\mathbf{f}}_j \hat{\mathbf{f}}_j^{\prime}=\mathbf{I} \quad \text { (sample covariance) }
+$$
+
+
+\end{document}

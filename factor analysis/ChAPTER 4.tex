@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{xcolor}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{apacite}
+\usepackage{longtable}
+\usepackage{adjustbox}
+\numberwithin{equation}{section}
+\numberwithin{table}{section}
+\newlist{bracketedromanenum}{enumerate}{1}
+\setlist[bracketedromanenum]{
+	label={(\roman*)},
+	ref={\roman*},
+	itemsep=0.5em,
+	topsep=0.5em
+}
+\begin{document}
+\section*{CHAPTER FOUR}
+\section*{DATA ANALYSIS}
+\setcounter{section}{4}
+\setcounter{subsection}{0}
+\subsection{Introduction}
+In this chapter, we discuss the sources of our data and the process of the preparation. We also explore the characteristics of data and finally we analyze and interpret the results.
+
+\subsection{Data for the Study}
+The data utilized in this study is Depression among cancer caregivers in a rural setting dataset published on figshare repository\cite{Kaggwa2021}. Trained research assistants (RA) with training in counselling and Responsible Conducted of Research (RCR), administered the translated 30-minute-long questionnaire (written form). This questionnaire captured the participants’ sociodemographic characteristics; age, sex, marital status, level of education, employment status, religion, and monthly income. Depression was assessed using the patient health questionnaire 9 (PHQ-9).All participants provided written consent to participate in the study. For participant who did not know how to read and write, the consent was read out loud to them in their preferred language and consented in the presence of their chosen witness comfortable in reading and writing.
+The sample size of 366 was calculated using the Kish-Leslie formula, basing on an estimated prevalence of 38.2\% among caregivers of cancer patients, level of attrition of 10\%, 95\% confidence interval and margin of error 5\%.
+
+\noindent Caregivers of cancer patients aged 18 years and above who consented to participate in the study by convenience sampling based on the caregivers present during the time of data collection – in the evening (convenience time for most caregivers) when the caregivers were not so occupied with caregiving activities. Caregivers who were already receiving mental health care for depression (as reported by the caregiver) were excluded from the study. Because the study was screening for individuals who need treatment and those were already on treatment.
+
+\noindent In this study, we utilized the "Age of participant" variable which represents the age of the caregiver who responded to the questionnaire, "Age of patient" variable, "Household income" which represents the ammount of money the household earns on a monthly basis; for our study, we have have converted the household income to Kenyan shilling using the CBK provided rates. Finally, we have  compututed the total scores of every caregiver to give the variable "PHQ-9 SCORE" which gives insite to the level of depression of each caregiver.
+
+\noindent Let's have a look at the first 20 observations of the dataset.
+		\begin{longtable}[t]{|c|c|c|c|}
+	\hline
+	age.of.participant & age.of.patient & Household.Income & PHQ.9.SCORE\\
+	\hline
+	23 & 25 & 749.06 & 10\\
+	28 & 80 & 749.06 & 7\\
+	45 & 2 & 374.53 & 19\\
+	24 & 2 & 22471.91 & 0\\
+	26 & 59 & 18726.59 & 15\\
+	
+	48 & 47 & 149812.73 & 6\\
+	22 & 74 & 3745.32 & 11\\
+	30 & 27 & 7490.64 & 10\\
+	28 & 73 & 7490.64 & 7\\
+	38 & 26 & 7490.64 & 1\\
+	
+	48 & 60 & 3745.32 & 1\\
+	32 & 28 & 18726.59 & 0\\
+	45 & 40 & 374.53 & 2\\
+	20 & 50 & 187.27 & 6\\
+	50 & 45 & 3745.32 & 1\\
+	
+	33 & 12 & 2621.72 & 13\\
+	30 & 45 & 187.27 & 1\\
+	40 & 54 & 7490.64 & 1\\
+	38 & 34 & 3745.32 & 2\\
+	67 & 29 & 374.53 & 1\\
+\hline
+
+\caption{\label{tab:table 1}First 20 observations}
+\end{longtable}
+
+\subsection{Exploratory Data Analysis}
+The data set was subjected to exploratory data analysis with the objective to gain a better understanding of it. This included $\boldsymbol{\chi^2}$-test to examine the independence of the variables and we then performed log transformation to minimize the effect of the outliers. All the analysis in this study were done on R software.
+
+\subsubsection{Multivariate Normality}
+
+One of the assumptions 
+
+	\bibliographystyle{apacite}
+\bibliography{14524800}
+
+\end{document}

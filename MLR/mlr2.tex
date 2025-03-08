@@ -1,0 +1,388 @@
+\documentclass[12pt]{article}
+%\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{array}
+\numberwithin{equation}{section}
+\newlist{bracketedromanenum}{enumerate}{1}
+\setlist[bracketedromanenum]{
+	label={(\roman*)},
+	ref={\roman*},
+	itemsep=0.5em,
+	topsep=0.5em
+}
+\usepackage{Sweave}
+\begin{document}
+\input{mlr2-concordance}
+\section*{CHAPTER ONE}
+\section*{INTRODUCTION}
+\setcounter{section}{1}
+\setcounter{subsection}{0}
+
+Multiple linear regression is a type of regression model that uses two or more independent variables to predict the response variable. It is a statistical technique for comprehending and quantifying the effect of several predictors on a desired outcome. As data gathering and analysis continue to advance Multiple linear regression remains an essential technique for modeling and forecasting many phenomena across a wide range of fields, including economics, social sciences, finance, and engineering.
+
+\subsection{Background Information}
+The fundamental idea behind multiple linear regression is to estimate the coefficients (slopes) of the independent variables while keeping other variables constant. These coefficients (slopes) represent the change in the dependent variable associated with a one-unit change in each predictor. The strength and direction of the relationships between the independent factors and the dependent variable can be quantified using this method. There are several steps involved in developing a linear regression model including gathering data, choosing the variables to use, creating and analyzing models, and interpreting the outcomes. To choose which predictors to include in the model, variable selection approaches like forward selection, backward elimination, or stepwise regression are used. Utilizing metrics such as R-squared, adjusted R-squared, and p-values, model evaluation entails evaluating the model's goodness of fit and statistical significance. In order to verify the assumptions and evaluate the effectiveness of the model, diagnostic procedures are also used, such as looking at residual plots and looking for significant observations
+
+\subsection{Statement of the Problem}
+Researchers have been faced with the problem of identifying potential predictors of depression among cancer caregivers.  In order to better understand the complex processes causing caregiver depression and to guide the creation of effective therapies and support systems, we have identified and quantified the important variables linked to depression and developed multiple regression model to understand the relative influence of these predictors.
+
+\subsection{Objective of the Study}
+\subsubsection{General objectives}
+To Identifying predictors, measuring associations, examining interactions, evaluating model performance, and offering evidence-based suggestions for interventions for depression among cancer care givers in a rural setting
+\subsubsection{Specific objectives}
+\begin{enumerate}
+\item To identify the significant predictors that contribute to depression among cancer caregivers in a rural setting
+\item To assess the performance of the multiple linear regression model in predicting depression among cancer caregivers. This involves evaluating the goodness of fit measures.
+\item To provide evidence-based recommendations for interventions and support systems aimed at addressing depression among cancer caregivers
+\end{enumerate}
+
+\subsection{Methodology}
+A cross sectional research design was used in a rural setting among cancer caregivers on 367 participants. The independent variables were the age of patient and participant and the level of income per month in a household. These were used to determine their relationship with the response variable which in this case is depression. A PHQ-9 scale was used to asses depression and the identified predictors and was administered using a face-to-face interview to gather data from the identified caregivers. Privacy and confidentiality of the data was ensured. The data was cleaned and outliers checked. A multiple linear regression was performed including all the relevant predictors and assumptions of the model addressed. The results were interpreted and goodness of fit evaluated. A discussion of the findings took place, conclusions were drawn and recommendations made accordingly
+\subsection{Assumptions}
+\begin{enumerate}
+\item\textbf{ Linearity:} The relationship between the dependent variable and independent variable should be linear. Change in the dependent variable should be proportional to change in independent variable.
+\item \textbf{Independence:} The independence assumes that there is no correlation or systematic relationship between the residuals or errors of the model
+\item \textbf{Normality:} The residuals of the model should be normally distributed
+\item \textbf{Homoscedasticity:} The variance of the residuals should be constant across all levels of the independent variables
+\end{enumerate}
+When these assumptions are violated, it can affect the reliability and accuracy of the regression model's estimate and its predictions. The assessment of these assumptions can be done using diagnostic techniques such as residual analysis, normality tests and scatter plots
+
+\subsection{Justification of the Study}
+Cancer caregiver depression is a serious mental health issue that can have a negative impact on both the caregivers and the people they are caring for. Understanding the causes of caregiver depression is essential to creating effective support networks and therapies. We may determine the main factors and their relative impact on caregiver sadness. Rural caregivers frequently encounter particular difficulties, such as restricted access to healthcare resources, social isolation, transportation problems, and budgetary restrictions (Walling et al., 2019) and (Fluchel et al., 2014).These difficulties could increase the load on caregivers and raise the risk of depression. Multiple linear regression analysis used to examine the depression predictors in the rural context can assist identify the unique elements leading to depression in these environments and direct the creation of specialized remedies. The results of this study can help with the creation and enhancement of rural cancer caregiver support systems. Healthcare professionals, policymakers, and support groups can create targeted treatments that meet the unique needs and difficulties of caregivers in these circumstances by recognizing the predictors of depression. Access to mental health treatments, strengthening social support systems, and putting caregiver-relief measures into place.
+
+\newpage
+	\section*{CHAPTER 2}
+	\section*{LITERATURE REVIEW}
+	In this chapter, a review of the existing research and scholarship related to mental health and its effects on a person's productivity as well as the interaction between an individual's cognitive, affective and somatic symptoms of depression is made. Key insights from previous research have immensely contributed to recent advances in mental health understanding.The following are some of the previous works.\\
+	
+	
+	\noindent A research study conducted by Martin et al. (2009), investigated whether different types of health promotion interventions in the workplace reduced depression and anxiety symptoms. A systematic review and meta-analysis of the literature was undertaken on workplace health promotion published during the period 1997-2007.Studies were considered eligible for inclusion if they evaluated the impact of an intervention using a valid indicator or specific measure of depression or anxiety symptoms. The standardized mean difference was calculated for each of the following three types of outcome measures; depression, anxiety and composite mental health. Altogether,22 studies met the inclusion criteria, with a total sample size of 3409 employees post intervention, and 17 of the studies were included in the meta-analysis representing 20 interventions-control comparisons. The pooled results indicated small but positive overall effects of the interventions with respect to symptoms of depression and anxiety, but no effect on composite mental health measures. The interventions that included a direct focus on mental health had a comparable effect on depression and anxiety symptoms as did the interventions with an indirect focus on risk factors.\\
+	
+	\noindent Jain et al. (2013) examined the burden of depression on work productivity in the US workforce. The Patient Health Questionnaire for depression severity and the Health and Work Performance Questionnaire and Work Productivity and Activity Impairment (WPAI) Questionnaire for absenteeism and presenteeism were used to survey 1051 full-time employees in February 2010. The results indicated that out of the 1051 employees with depression, 40.3\% had no depressive symptoms at the time of the survey,30.4\% had mild depression, 15.8\% had moderate depression,7.8\% had moderately severe depression, and 5.8\% had severe depression. All levels of depression were associated with decreased work productivity as severity increased, presenteeism and absenteeism worsened.\\
+	
+	
+	\noindent In another study Serpa et al. (2014), investigated the major problems among Veterans specifically anxiety, depression and suicidal ideation. Pre- and Post Mindfulness Based Stress Reduction (MBSR) questionnaires were used to collect data on MBSR's effectiveness among 79 veterans at an urban Veterans Health Administration medical facility and were used for comparison among individuals. A meditation analysis was conducted to determine whether changes in mindfulness were related to changes in the other outcomes for a period of 9 weekly sessions. The results indicated significant reductions in anxiety, depressions, and suicidal ideation after MBSR training as well as improved mental health functioning scores although pain intensity and physical health functionality did not register improvements.\\
+	
+	\noindent Laing and Jones (2016) investigated the mediation effect of anxiety and depression on the relationship between perceived health-promoting workplace culture and presenteeism. Paper surveys were distributed to 4703 state employees. The variables that were investigated included symptoms of depression, anxiety, perceived workplace support for healthy living inclusive of physical activity and presenteeism. Correlational analysis was used to asses the relationships among culture, mental health and productivity. The results indicated that indirect effects of workplace culture on productivity, mediated by anxiety and depression symptoms were significant. Healthy living culture and anxiety were significantly negatively associated and anxiety and presenteeism were significantly positively associated.\\
+	
+	\noindent Another study by Magtibay et al. (2017) assessed the efficacy of blended learning which was intended to decrease stress and burnout among nurses through the use of the Stress Management and Resiliency Training (SMART) program. Consistent with blended learning, participants chose the format that met their learning styles and goals; Web-based, independent reading or facilitated discussions. The end points of mindfulness, resilience, anxiety, stress, happiness, and burnout were measured at baseline, postintervention, and 3-month follow-up to examine within-group differences. The results indicated statistically significant, clinically meaningful decreases in anxiety, stress, and burnout and increases in resilience, happiness, and mindfulness. \\
+	
+	\noindent Levis et al. (2019), evaluate the accuracy of the Patient Health Questionnaire-9 (PHQ-9) for screening major depression in adults using individual participant data meta-analysis. The study, which was conducted by the DEPRESsion Screening Data (DEPRESSD) Collaboration, analyzed data from 58 studies, with a total of 17 357 participants. It was found that combined sensitivity and specificity was maximized at a cut-off score of 10 or above among studies using a semi-structured interview. Secondly across cut-off scores of 5-15, sensitivity with semi-structured interviews was 5\%-22\% higher than for fully structured interviews.  \\
+	
+	\noindent Leung et al. (2020) investigated the factor structure, reliability, and construct validity of the Patient Health Questionnaire-9 (PHQ-9) in a community sample of 10 933 Chinese adolescents. Confirmatory factor analysis (CFA) was used to examine the one-factor structure of the PHQ-9, and multiple-group CFAs were performed to test for measurement invariance across gender and age subgroups. Internal consistency reliability was evaluated using Cronbach alpha, and construct validity was assessed using Pearson correlation coefficients between PHQ-9 scores and anxiety, self-esteem and perceived control. The results indicated that a one-factor model with three pairs of items correlations fitted the PHQ-9 data well and that measurement invariances by age and gender were supported. The PHQ-9 was also strongly correlated with anxiety, self-esteem and perceived control.\\
+	
+	\noindent In a recent study, Levis et al. (2020), a meta-analysis of 44 studies was conducted to compare the sensitivity and specificity of the PHQ-2 alone and combined with PHQ-9.The Individual participant data were obtained from 100 eligible studies comprising of 44 318 participants, of which 4572 had major depression. The authors found that the combination of PHQ-2 followed by PHQ-9 had similar sensitivity but higher specificity compared with PHQ-9.\\
+	
+	\noindent In a more recent study, Lister et al. (2023) conducted a qualitative study that investigated the barriers and enablers to mental wellbeing and academic success that students experienced in distance learning. Narrative enquiry was used whereby students shared their own stories and tutors shared stories about the students they had supported. In total, 60 themes were identified, consisting of 155 sub-themes and 783 coded references. The barriers and enablers were then clustered into three overall categories; study-related barriers/enablers, skills-related barriers/enablers and environmental barriers/enablers, and 10 sub-categories, curriculum, tuition, assessment, social skills, self-management, study skills, spaces, systems, people and life. It was found that barriers and enablers were existent in the majority of themes, implying that different aspects of study could be both barriers or enablers for mental wellbeing and study success, depending on who was experiencing them and how, for example, assessment feedback was a barrier for students when it was negative, but was an enabler when it was constructive and took place in an environment of trust.\\
+	
+	\noindent In summary, the past research works on mental health have been conducted using Meta-analysis, Qualitative techniques, CFA and Narrative enquiry. Multiple linear regression will be conducted to examine the relationships between the independent variables
+	(age of patient, age of participant, and level of income) and the dependent
+	variable (level of depression). The findings of this research will contribute to
+	our understanding of the factors influencing depression among caregivers in rural
+	settings and may inform the development of targeted interventions to support
+	these individuals. 
+\newpage
+\section*{CHAPTER THREE}
+\section*{METHODOLOGY}
+\label{sec:methodology}
+\setcounter{section}{3}
+\setcounter{subsection}{0}
+
+\subsection{Introduction}
+This chapter presents the the theory of the multiple linear regression model as well as the Learst square principal solution of the model as demonstrated in the following subsections.
+\subsection{Multiple linear regression}
+Multiple linear regression allows us to investigate the joint effect of two or more  predictors on the response; i.e. relate a single response variable to two or more  predictors simultaneously. The predictor variables may be all quantitative or both quantitative and categorical.\\
+With, multile linear regression model we can  ;
+
+\begin{bracketedromanenum}
+	\item show how strong the relationship is between two or more predictor variables and one response variable.
+	\item predict the value of the response variable at a certain value of the predictor variables.
+\end{bracketedromanenum}
+
+\subsection{Multiple linear regression model}
+
+Suppose we want to use $k$ predictor variables $X_1, X_2, \ldots, X_k$ to explain a response variable $y$ then the model is of the form:
+\begin{equation}
+	y=\beta_0+\beta_1 X_1+\ldots+\beta_k X_k+\epsilon
+	\label{eq:methodology_eq1}
+\end{equation}
+Given a random sample of size $n$ selected from the population, the model is of the form
+
+\begin{equation}
+	Y_i=\beta_0+\beta_1 X_{i 1}+\ldots+\beta_k X_{i k}+\epsilon_i ; \quad i=1,2, \ldots, n
+	\label{eq:methodology_eq2}
+\end{equation}
+In matrix form we have
+$$
+\left[\begin{array}{c}
+	y_1 \\
+	y_2 \\
+	\vdots \\
+	y_n
+\end{array}\right]=\left[\begin{array}{ccccc}
+	1 & x_{11} & x_{12} & \cdots & x_{1 k} \\
+	1 & x_{21} & x_{22} & \cdots & x_{2 k} \\
+	\vdots & & & & \vdots \\
+	1 & x_{n 1} & X_{n 2} & \cdots & x_{n k}
+\end{array}\right]\left[\begin{array}{c}
+	\beta_0 \\
+	\beta_1 \\
+	\vdots \\
+	\beta_k
+\end{array}\right]+\left[\begin{array}{c}
+	\epsilon_1 \\
+	\epsilon_2 \\
+	\vdots \\
+	\epsilon_n
+\end{array}\right]
+$$
+i.e
+\begin{equation}
+	\underbrace{\mathbf{y}}_{n \times 1}=\underbrace{\mathbf{X}}_{n \times(k+1)} \underbrace{\underline{\beta}}_{(k+1) \times 1}+\underbrace{\epsilon}_{n \times 1}
+\end{equation}
+where;\\
+The matrix $\mathbf{X}$ is called design matrix ;\\
+$\underline{\beta}$ is a column vector of regression coefficients.\\
+$\mathbf{y}$ is a column of response values for individuals in the sample.\\
+$\epsilon_i$ is the error term of individual observations of the outcome $y_i$ 
+
+\subsubsection*{Assumptions of the model:}
+\begin{itemize}
+	\item  Each error term in the error vector has mean zero; $E[\underline{\epsilon}]=\underline{0}$
+	\item The error terms are independent of each other; $\operatorname{Cov}\left(\epsilon_i, \epsilon_j\right)=0$
+	\item  The error terms have constant variance; $E\left[\underline{\epsilon \epsilon}{ }^{\prime}=\sigma^2 I_n\right.$
+	\item  The error terms are normally distributed with mean 0 and finite variance $\sigma^2$.
+	\item  The response variable is normally distributed.
+	\item There is no correlation between the error terms and the predictor variables.
+\end{itemize}
+
+
+\subsection{Estimation of the Model Parameters}
+
+In order to estimate the model parameters $\beta_0, \beta_1, \ldots, \beta_p$ in \ref{eq:methodology_eq1} we use the principle of least squares which minimizes the error sum os squares(SSE).
+Suppose that $n > k$ observations are available, and let $y_i$ denote the $i^th$ observed response and $x_{ij}$ denote the $i_th$ observation.
+We assume that the error term $\varepsilon$ in the model has $E(\varepsilon) =0, Var(\varepsilon) = \sigma^2$, and that the errors are uncorrelated.
+
+\noindent The general model of the Learst squares function is 
+
+\begin{equation}
+	S\left(\beta_0, \beta_1, \ldots, \beta_k\right)=\sum_{i=1}^n \varepsilon_i^2=\sum_{i=1}^n\left(y_i-\beta_0-\sum_{j=1}^k \beta_j x_{i j}\right)^2
+\end{equation}
+
+\noindent The function $S$ must be minimized with respect to $\beta_0, \beta_1, \ldots, \beta_k$. The least-squares estimators of $\beta_0, \beta_1, \ldots, \beta_k$ must satisfy
+\begin{equation}
+	\left.{\frac{\partial S}{\partial \beta_0}}\right|_{\hat{\beta}_0, \hat{\beta}_1, \ldots, \hat{\beta}_k}=-2 \sum_{i=1}^n\left(y_i-\hat{\beta}_0-\sum_{j=1}^k \hat{\beta}_j x_{i j}\right)=0
+\end{equation}
+and
+\begin{equation}
+	\left.{\frac{\partial S}{\partial \beta_j}}\right|_{\hat{k}_0 \hat{\beta}_1 \ldots \hat{\beta}_k}=-2 \sum_{i=1}^n\left(y_i-\hat{\beta}_0-\sum_{j=1}^k \hat{\beta}_j x_{i j}\right) x_{i j}=0, \quad j=1,2, \ldots, k
+	\label{eq:methodology_eq6}
+\end{equation}
+
+\noindent Simplifying equation \ref{eq:methodology_eq6}, we obtain the least-squares normal equations
+\begin{equation}
+	n \hat{\beta}_0+\hat{\beta}_1 \sum_{i=1}^n x_{i 1}+\hat{\beta}_2 \sum_{i=1}^n x_{i 2}+\cdots+\hat{\beta}_k \sum_{i=1}^n x_{i k}=\sum_{i=1}^n y_i
+\end{equation}
+\noindent which simplifies to 
+\begin{equation}
+	\mathbf{X'X \hat{\boldsymbol{\beta}}= X'Y}
+\end{equation}
+$$ SSE=\mathbf{(Y-X\underline{\beta})'(\underline{Y}-X \underline{\beta})}$$
+
+\noindent Differentiating SSE wrt to each unknown regression coefficient yields a $(k+1)$ simultaneous equations which are called normal equations.  \\
+\noindent The matrix of the normal equation is given 
+
+\begin{equation}
+	X'\underline{Y}=(X'X)\underline{\beta}
+\end{equation}
+
+\noindent The solution is given by;
+$$\underline{\beta}= \left[\begin{array}{c}
+	\beta_1 \\
+	\beta_2 \\
+	\vdots \\
+	\beta_j\\
+	\vdots\\
+	y_n
+\end{array}\right]=(X'X)^{-1}X'Y$$
+
+\noindent provided the inverse matrix $(X'X)^{-1}$ exists.
+
+\subsection*{Fitted values}
+Let $\hat{\beta}$ be the estimator of $\beta$ for the model $y=X \beta+\epsilon$, we then define $\hat{y}=X \beta$ where $\beta$ is any estimator of $\beta$
+$R^2$ is the percentage of the dependent variable explained by the independent variable. The coefficient of multiple determination $R^2$ is
+$$
+R^2=1-\frac{S S E}{S S T}=\frac{S S R}{S S T}
+$$
+Multiple regression explains most of the observed y variation using a model with relatively few predictors that are easily interpreted. We therefore adjust $R^2$ to the size of the model
+$$
+R_a^2=1-\frac{n-1}{n-(p+1)} \times \frac{S S E}{S S T}
+$$
+and since the ratio infront of $\frac{S S E}{S S T}$ exceeds $1, R_a^2$ is smaller than $R^2$.
+The larger the number of predictors p relative to the sample size $n$, the smaller $R_\alpha^2$ will be relative to $R^2$. When $R^2$ is adjusted, it can take a negative value while $R^2$ itself must be between 0 and 1 .
+If $R_a^2$ is smaller than $R^2$, then the model may contain many predictors.
+
+
+\subsubsection*{Properties of Learst Squares Estimators}
+
+\begin{itemize}
+	\item $\hat{\beta}$ is unbiased estimator of $\beta$ if the model is correct.
+	\item $cov(\beta)=var(\hat{\beta}=var[(X'X)^{-1}X'Y]$
+\end{itemize}
+
+\subsubsection*{Estimation of $\sigma^2$}
+The method of least squares cannot be used to estimate $\sigma^2$ because $\sigma^2$ does not appear in $s(\beta)$
+We use the SSE as the basis for estimating
+$$
+\hat{\sigma}^2=s^2=\frac{S S E}{n-(p+1)}
+$$
+\subsection{HYPOTHESIS TESTING IN MULTIPLE LINEAR REGRESSION}
+
+Once we have estimated the parameters in the model, we face two
+immediate questions:\\
+\begin{enumerate}
+	\item What is the overall adequacy of the model?
+	\item Which specific regressors seem important? 
+\end{enumerate}
+Several hypothesis testing procedures prove useful for addressing
+these questions. The formal tests require that our random errors be
+independent and follow a normal distribution with mean $E(\epsilon_i)= 0$
+and variance  $Var(\epsilon_i)=\sigma^2$ \\
+\subsubsection{Test for Significance of Regression}
+The test for significance of regression is a test to determine if there
+is a linear relationship between the response $y$ and any of the
+regressor variables $x_1, x_2, \ldots ,x_k$\\
+This procedure is often thought of as an overall or global test of model adequacy. The appropriate hypotheses are\\
+$$H_0:\beta_1=\beta_2=\cdots\beta_k=0$$
+$$H_1:\beta_j\neq 0 for at least j$$
+Rejection of this null hypothesis implies that at least one of the
+regressors $x_1, x_2 \ldots x_k$ contributes significantly to the model.\\
+The test procedure is a generalization of the analysis of variance used in simple linear regression. The total sum of squares SST is partitioned into a sum of squares due to regression, SSR, and a residual sum of squares, SSE.
+Thus,\\
+This shows that if the null hypothesis is true,then $SSR_R\div\sigma$ follows a $\chi^2_k$ distribution, which has the same number of degrees of freedom as number of regressor variables in the model. 
+\begin{equation}
+	F_0=\frac{S S_{\mathrm{R}} / k}{S S_{\text {Res }} /(n-k-1)}=\frac{M S_{\mathrm{R}}}{M S_{\text {Res }}}
+\end{equation}
+
+\noindent follows the $F_{k, n-k-1}$ distribution.
+
+\noindent Suppose the expected mean squares indicate that if the observed value of
+$F_0$ is large, then it is likely that at least one $\beta_j \neq 0$ therefore we reject the null hypothesis.
+
+\noindent The test procedure is usually summarized in an analysis-or-variance
+\begin{equation*}
+	\begin{array}{lcccc}
+		\hline \text { Source of Variation } & \text { Sum of Squares } & \text { Degrees of Freedom } & \text { Mean Square } & F_0 \\
+		\hline \text { Regression } & S S_{\mathrm{R}} & k & M S_{\mathrm{R}} & M S_{\mathrm{R}} / M S_{\text {Res }} \\
+		\text { Residual } & S S_{\text {Res }} & n-k-1 & M S_{\text {Res }} & \\
+		\text { Total } & S S_{\mathrm{T}} & n-1 & & \\
+		\hline
+	\end{array}
+\end{equation*}
+
+\noindent and since
+\begin{equation}
+	S S_{\mathrm{T}}=\sum_{i=1}^n y_i^2-\frac{\left(\sum_{i=1}^n y_i\right)^2}{n}=\mathbf{y}^{\prime} \mathbf{y}-\frac{\left(\sum_{i=1}^n y_i\right)^2}{n}
+\end{equation}
+
+\noindent we may rewrite the above equation as\\
+\begin{equation}
+	S S_{\mathrm{Res}}=\mathbf{y}^{\prime} \mathbf{y}-\frac{\left(\sum_{i=1}^n y_i\right)^2}{n}-\left[\hat{\boldsymbol{\beta}}^{\prime} \mathbf{X}^{\prime} \mathbf{y}-\frac{\left(\sum_{i=1}^n y_i\right)^2}{n}\right]
+\end{equation}
+
+\noindent Therefore, the regression sum of squares is
+
+\begin{equation}
+	SS_{R}=\hat{\boldsymbol{\beta}}^{\prime} \mathbf{X}^{\prime} \mathbf{y}-\frac{\left(\sum_{i=1}^n y_i\right)^2}{n}
+\end{equation}
+
+\noindent the total sum of squares is\\
+
+\begin{equation}
+	S S_{\mathrm{T}}=\mathbf{y}^{\prime} \mathbf{y}-\frac{\left(\sum_{i=1}^n y_i\right)^2}{n}
+\end{equation}
+
+\subsubsection {Tests on Individual Regression Coeficients and Subsets of Coeficients}
+Once we have determined that at least one of the regressors is important, a logical question becomes which one(s). Adding a variable to a regression model always causes the sum of squares for regression to increase and the residual sum of squares to decrease.
+We must decide whether the increase in the regression sum of squares is suficient to warrant using the additional regressor in the model. The addition of a regressor also increases the variance of the fitted value , so we must be careful to include only regressors that are of real value in explaining the response. Furthermore, adding an unimportant regressor may increase the residual mean square, which may decrease the usefulness of the model.
+
+\noindent The hypotheses for testing the significance of any individual regression coeficient, such as $\beta_{\jmath}$ are\\
+$$H_0: \beta_j =0 ; H_1: \beta_j \neq 0$$
+
+\noindent If $H_0:\beta_j = 0$ is not rejected, then this indicates that the regressor $xj$ can be deleted from the model. 
+
+\subsection{Prediction of New Observations}
+
+The regression model can be used to predict future observations on y corresponding to particular values of the regressor variables, for example, $x_{01}, x_{02}, \ldots, x_{0 k}$. If $\boldsymbol{x}_0^{\prime}=\left[1, x_{01}, x_{02}, \ldots, x_{0 k}\right]$, then a point estimate of the future observation $y_0$ at the point $x_{01}, x_{02}, \ldots, x_{0 k}$ is
+$$\hat{y}_0=\mathbf{x}_0^{\prime} \hat{\beta}$$
+\noindent A $100(1-\alpha)$ percent prediction interval for this future observation is
+$$\hat{y}_0-t_{\alpha / 2, n-p} \sqrt{\hat{\sigma}^2\left(1+\mathbf{x}_0^{\prime}\left(\mathbf{X}^{\prime} \mathbf{X}\right)^{-1} \mathbf{x}_0\right)} \leq y_0 \leq \hat{y}_0+t_{\alpha / 2, n-p} \sqrt{\hat{\sigma}^2\left(1+\mathbf{x}_0^{\prime}\left(\mathbf{X}^{\prime} \mathbf{X}\right)^{-1} \mathbf{x}_0\right)}$$
+This is a generalization of the prediction interval for a future observation in simple linear regression.
+
+\newpage
+
+\section*{CHAPTER FOUR}
+\section*{DATA ANALYSIS}
+\setcounter{section}{4}
+\setcounter{subsection}{0}
+\subsection{Introduction}
+In this chapter, we discuss the sources of our data and the process of the preparation. We also explore the characteristics of data and finally we analyze and interpret the results.
+
+\subsection{Data for the Study}
+The data utilized in this study is Depression among cancer caregivers in a rural setting dataset published on figshare repository(Kagawa et al., 2021). Trained research assistants (RA) with training in counselling and Responsible Conducted of Research (RCR), administered the translated 30-minute-long questionnaire (written form). This questionnaire captured the participants' sociodemographic characteristics; age, sex, marital status, level of education, employment status, religion, and monthly income. Depression was assessed using the patient health questionnaire 9 (PHQ-9).All participants provided written consent to participate in the study. For participant who did not know how to read and write, the consent was read out loud to them in their preferred language and consented in the presence of their chosen witness comfortable in reading and writing.
+The sample size of 366 was calculated using the Kish-Leslie formula, basing on an estimated prevalence of 38.2\% among caregivers of cancer patients, level of attrition of 10\%, 95\% confidence interval and margin of error 5\%.
+
+\noindent Caregivers of cancer patients aged 18 years and above who consented to participate in the study by convenience sampling based on the caregivers present during the time of data collection - in the evening (convenience time for most caregivers) when the caregivers were not so occupied with caregiving activities. Caregivers who were already receiving mental health care for depression (as reported by the caregiver) were excluded from the study. Because the study was screening for individuals who need treatment and those were already on treatment.
+
+\noindent In this study, we utilized the "Age of participant" variable which represents the age of the caregiver who responded to the questionnaire, "Age of patient" variable, "Household income" which represents the amount of money the household earns on a monthly basis; for our study, we have have converted the household income to Kenyan shilling using the CBK provided rates. Finally, we have  computed the total scores of every caregiver to give the variable "PHQ-9 SCORE" which gives insight to the level of depression of each caregiver.
+
+\noindent Let's have a look at the first 20 observations of the dataset.
+
+\begin{longtable}[t]{|c|c|c|c|}
+	\hline
+	age.of.participant & age.of.patient & Household.Income & PHQ.9.SCORE\\
+	\hline
+	23 & 25 & 749.06 & 10\\
+	28 & 80 & 749.06 & 7\\
+	45 & 2 & 374.53 & 19\\
+	24 & 2 & 22471.91 & 0\\
+	26 & 59 & 18726.59 & 15\\
+	
+	48 & 47 & 149812.73 & 6\\
+	22 & 74 & 3745.32 & 11\\
+	30 & 27 & 7490.64 & 10\\
+	28 & 73 & 7490.64 & 7\\
+	38 & 26 & 7490.64 & 1\\
+	
+	48 & 60 & 3745.32 & 1\\
+	32 & 28 & 18726.59 & 0\\
+	45 & 40 & 374.53 & 2\\
+	20 & 50 & 187.27 & 6\\
+	50 & 45 & 3745.32 & 1\\
+	
+	33 & 12 & 2621.72 & 13\\
+	30 & 45 & 187.27 & 1\\
+	40 & 54 & 7490.64 & 1\\
+	38 & 34 & 3745.32 & 2\\
+	67 & 29 & 374.53 & 1\\
+	\hline
+	
+	\caption{\label{tab:table 1}First 20 observations}
+\end{longtable}
+
+\subsection{Exploratory Data Analysis}
+
